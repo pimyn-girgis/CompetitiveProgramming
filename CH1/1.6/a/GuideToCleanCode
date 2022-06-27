@@ -1,0 +1,20 @@
+Clean Code Rules:
+
+Naming:
+
+1- Names should not require comments.
+2- Names should be searchable.
+3- Similar names should be avoided.
+4- Avoid single letter naming.
+5- Avoid encoding.
+6- When forced to use the same name for interface and implementation, give the straight forward name to the interface; The user shouldn't deal with different names.
+7- A class name should be a noun.
+8- A method name should be a verb; use prefixes like set, get, and is.
+9- When overloading constructors, give them names that describe their variables //Not applicable to C++.
+10- Don't pick a secret name that only you understand; Say what you mean. Mean what you say.
+11- pick one word per concept; don't use get, retreive, and fetch as names for the same method in different classes.
+12- Don't pun; never use the same function name for two different concepts.
+13- if available, use Computer Science terms, otherwise, use problem domain terms.
+14- Context is important; state means something in an adress class and another in another class.
+15- Don't add too much context. SuperDopeProgrammNameAccountManager is useless in a programm called SuperDopeProgrammName, AccountManager is enough.
+16-

@@ -1,0 +1,14 @@
+Turn: 1, val: 0
+Turn: 2, val: 0
+Turn: 1, val: 2
+Turn: 1, val: 0
+Turn: 2, val: 1
+player two wins
+Turn: 1, val: 0
+Turn: 2, val: 3
+Turn: 2, val: 2
+Turn: 1, val: 1
+Turn: 2, val: 2
+drawplayer two wins
+draw
+draw
