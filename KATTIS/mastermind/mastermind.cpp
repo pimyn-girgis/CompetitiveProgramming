@@ -37,6 +37,8 @@ int main()
     int n;
     init();
     scanf("%d%s%s", &n, code, guess);
-    printf("%d %d\n", rValue(), sValue());
+	int r = rValue();
+	int s = sValue();
+    printf("%d %d\n", r, s);
     return 0;
 }
