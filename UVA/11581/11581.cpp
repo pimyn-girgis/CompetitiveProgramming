@@ -2,11 +2,12 @@
 using namespace std;
 
 char grid[3][4];
+char Fgrid[3][4];
 
 bool valid(int x){return x >= 0 && x <3;}
 bool valid(int x, int y){return valid(x) && valid(y);}
-int x[4] = {-1, -1, 1, 1};
-int y[4] = {-1, 1, 1, -1};
+int x[4] = {-1, 1, 0, 0};
+int y[4] = {0, 0, 1, -1};
 
 char sumMod(int xpos, int ypos)
 {
@@ -18,9 +19,8 @@ char sumMod(int xpos, int ypos)
 	return val%2 + '0';
 }
 
-void solve()
+int solve()
 {
-	char Fgrid[3][4];
 	memset(Fgrid, 0, sizeof(Fgrid));
 	int ans = -1;
 	while(1)
@@ -28,11 +28,13 @@ void solve()
 		for(int i=0;i<3;++i)
 			for(int j=0;j<3;++j)
 				Fgrid[j][i] = sumMod(j, i);
+
 		if(!memcmp(grid, Fgrid, sizeof(grid)))
-			++ans;
+			return ans;
+
 		memcpy(grid, Fgrid, sizeof(grid));
+		++ans;
 	}
-	printf("%d\n", ans);
 }
 
 int main()
@@ -42,10 +44,7 @@ int main()
 	while(ts--)
 	{
 		for(int i=0;i<3;++i) scanf("%s", grid[i]);
-		solve();
+		printf("%d\n", solve());
 	}
 	return 0;
 }
-/*
-8 111 111 111 111 110 000 110 000 000 110 001 101 101 010 101 111 000 111 000 000 000 101 000 101
-*/
