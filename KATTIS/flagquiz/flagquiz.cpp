@@ -6,7 +6,8 @@ string ans[105][105];
 char in[5100];
 int part = 0;
 int n;
-int Count[105];
+int Count[105][105];
+int val[105];
 
 void tokenize(int i)
 {
@@ -14,9 +15,9 @@ void tokenize(int i)
 	char *token = strtok(in, ",\n");
 	while(token)
 	{
+		if(!i) ++part;
 		ans[i][++k] = token;
 		token = strtok(0, ",\n");
-		++part;
 	}
 }
 
@@ -24,8 +25,7 @@ void input()
 {
 	fgets(in, 1000, stdin);
 	scanf("%d", &n);
-	part = n;
-	fflush(stdin);
+	getchar();
 	for(int i=0;i<n;++i)
 	{
 		fgets(in, 5100, stdin);
@@ -36,22 +36,21 @@ void input()
 void solve()
 {
 	memset(Count, 0, sizeof(Count));
-	part /= n;
-	printf("%d", part);
-
-	for(int j=0;j<part;++j)
-		for(int i=0;i<n;++i)
-			for(int k=0;k<n;++k)
-					Count[i] += ans[i][j] == ans[k][j];
+	for(int i=0;i<n;++i)
+		for(int k=0;k<n;++k)
+			for(int j=0;j<part;++j)
+				Count[i][k] += (ans[i][j] != ans[k][j]);
+	for(int i=0;i<n;++i)
+		val[i] = *max_element(Count[i], Count[i]+n);
 }
 
 void output()
 {
-	int val = *max_element(Count, Count+n);
+	int mini = *min_element(val, val+n);
 	for(int i=0;i<n;++i)
-		if(Count[i] == val) 
+		if(mini == val[i]) 
 			for(int j=0;j<part;++j)
-				printf("%s%c%d", ans[i][j].c_str(), part-j-1? ',' : '\n', part-j-1);
+				printf("%s%c", ans[i][j].c_str(), part-j-1? ',' : '\n');
 }
 
 int main() 
