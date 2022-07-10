@@ -7,16 +7,15 @@ char pieces[8][8][5];
 int white= 0, black = 0;
 char val;
 
+char symbol[5] = "KQRBN";
+
 void print(bool whi, int x)
 {
 	if(x == 6)
 		return;
-	if(!x) val = 'K';
-	else if(x == 1) val = 'Q';
-	else if(x == 2) val = 'R';
-	else if(x == 3) val = 'B';
-	else if(x == 4) val = 'N';
-	else if(x == 5) val = 0;
+	if(x == 5) val = 0;
+	else val = symbol[x];
+
 	for(int i = whi? 0 : 7; whi? i < 8 : i >= 0; i += whi? 1 : -1) 
 		for(int j = 0; j < 8; ++j)
 		{
