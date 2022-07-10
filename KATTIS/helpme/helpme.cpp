@@ -7,7 +7,6 @@ char pieces[8][8][5];
 int white= 0, black = 0;
 char val;
 
-FILE *out = fopen("out", "a");
 void print(bool whi, int x)
 {
 	if(x == 6)
