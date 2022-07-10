@@ -10,19 +10,20 @@ char symbol[6] = "KQRBN";
  
 void print(bool whi, int x)
 {
-	if(x == 6)
-		return;
+	if(x == 6) return;
+
 	val = symbol[x];
  
 	for(int i = whi? 0 : 7; whi? i < 8 : i >= 0; i += whi? 1 : -1) 
 		for(int j = 0; j < 8; ++j)
 		{
-			if(whi? isupper(pieces[i][j][0]) : islower(pieces[i][j][0]))
-				if(toupper(pieces[i][j][0]) == val || val == 0 && toupper(pieces[i][j][0]) == 'P')
+			char cur = pieces[i][j][0];
+			if(whi && isupper(cur) || !whi && islower(cur))
+				if(toupper(cur) == val || val == 0 && toupper(cur) == 'P')
 				{
-					if(val) printf( "%c", val);
+					if(val) printf("%c", val);
 					printf( "%c%c", pieces[i][j][1], pieces[i][j][2]);
-					if(whi && --white || !whi && --black)	printf( ",");
+					if(whi && --white || !whi && --black) printf( ",");
 				}
 		}
 	print(whi, ++x);
