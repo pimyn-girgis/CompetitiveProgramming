@@ -3,6 +3,7 @@ using namespace std;
 
 vector<int> arr(20);
 int sum;
+#define n 20
 
 void init()
 {
@@ -12,17 +13,9 @@ void init()
 
 void solve()
 {
-	for(int i=1;i<20;++i)
-	{
-		int key = arr[i];
-		int j;
-		for(j=i-1;j>=0 && arr[j] > key;--j)
-		{
-			arr[j+1] = arr[j];
-			++sum;
-		}
-		arr[j+1] = key;
-	}
+	for(int i=1;i<n;++i)
+		for(int j=i;j>=0;--j)
+			if(arr[j] < arr[j-1]) swap(arr[j], arr[j-1]), ++sum;
 }
 
 int main() 
