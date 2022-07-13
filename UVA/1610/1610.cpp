@@ -6,6 +6,11 @@ int n;
 
 void solve()
 {
+	string ans;
+	string sml = guest[n/2-1];
+	string big = guest[n/2];
+
+	printf("%s\n", ans.c_str());
 }
 
 int main()
@@ -20,20 +25,7 @@ int main()
 	}
 	return 0;
 }
+
 /*
-4
-FRED
-SAM
-JOE
-MARGARET
-2
-FRED
-FREDDIE
-2
-JOSEPHINE
-JERRY
-2
-LARHONDA
-LARSEN
-0
+4 FRED SAM JOE MARGARET 2 FRED FREDDIE 2 JOSEPHINE JERRY 2 LARHONDA LARSEN 0
 */
