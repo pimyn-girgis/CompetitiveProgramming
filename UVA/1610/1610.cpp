@@ -10,6 +10,10 @@ void solve()
 	string sml = guest[n/2-1];
 	string big = guest[n/2];
 
+	for(int i=0;;++i)
+	{
+	}
+
 	printf("%s\n", ans.c_str());
 }
 
