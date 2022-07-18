@@ -1,15 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int score[105];
-int pen[105];
-int potPen[105][9];
-bool solved[105][9];
-bool sub[105];
-char in[100];
-int Time, con, prob;
+int score[105]; //number of solved
+int pen[105]; //penalty for each contestant
+int potPen[105][9]; //penalty for each contestant for each problem
+bool solved[105][9]; //is question x solved by contestant y?
+bool sub[105]; //did contestant i make a submission
+char in[100]; //input
+int Time, con, prob; 
 char judge;
-int leader[105];
+int leader[105];//leader board -- ranking
 
 void init()
 {
