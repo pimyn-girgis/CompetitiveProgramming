@@ -40,8 +40,8 @@ int main()
 		init();
 		while(1)
 		{
-			fgets(in, 100, stdin);
-			if(feof(stdin) || !strcmp(in, "\n")) output();
+			if(!fgets(in, 100, stdin) || in[0] == '\n') break;
+
 			sscanf(in, "%d %d %d %c", &con, &prob, &Time, &judge);
 			--con, --prob;
 			sub[con] = 1;
