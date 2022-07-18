@@ -30,10 +30,6 @@ bool comp(int x, int y)
 	return x < y;
 }
 
-void output()
-{
-
-}
 int main()
 {
 	int ts;
