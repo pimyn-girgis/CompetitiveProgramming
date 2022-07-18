@@ -30,39 +30,46 @@ bool comp(int x, int y)
 	return x < y;
 }
 
+void output(int ts)
+{
+	stable_sort(leader, leader+105, comp);
+	for(int i=0;i<105;++i)
+	{
+		int index = leader[i];
+		if(sub[index]) printf("%d %d %d\n", index+1, score[index], pen[index]);
+	}
+	if(ts) printf("\n");
+}
+
+void solve()
+{
+	while(fgets(in, 100, stdin) && *in && *in != '\n')
+	{
+		sscanf(in, "%d %d %d %c", &con, &prob, &Time, &judge);
+		--con, --prob;
+		sub[con] = 1;
+
+		if(!solved[con][prob])
+		{
+			if(judge == 'I') potPen[con][prob] += 20;
+			else if(judge == 'C')
+			{
+				solved[con][prob] = 1;
+				pen[con] += potPen[con][prob] + Time;
+				++score[con];
+			}
+		}
+	}
+}
+
 int main()
 {
 	int ts;
-	scanf("%d", &ts);
-	fgets(in, 100, stdin);
+	scanf("%d\n\n", &ts);
 	while (ts--)
 	{
 		init();
-		while(1)
-		{
-			if(!fgets(in, 100, stdin) || in[0] == '\n') break;
-
-			sscanf(in, "%d %d %d %c", &con, &prob, &Time, &judge);
-			--con, --prob;
-			sub[con] = 1;
-
-			if(!solved[con][prob])
-			{
-				if(judge == 'I') potPen[con][prob] += 20;
-				else if(judge == 'C')
-				{
-					solved[con][prob] = 1;
-					pen[con] += potPen[con][prob] + Time;
-					++score[con];
-				}
-			}
-		}
-		stable_sort(leader, leader+105, comp);
-		for(int i=0;i<105;++i)
-		{
-			int index = leader[i];
-			if(sub[index]) printf("%d %d %d\n", index+1, score[index], pen[index]);
-		}
-		if(ts) printf("\n");
+		solve();
+		output(ts);
 	}
 }
