@@ -4,28 +4,41 @@ using namespace std;
 vector <string> guest(1005);
 int n;
 
-void solve()
+string solve()
 {
-	string ans;
+	string ans(40, ' ');
 	string sml = guest[n/2-1];
 	string big = guest[n/2];
-
-	for(int i=0;;++i)
+	int k = 0;
+	while(ans < sml || ans >= big)
 	{
-	}
+		bool done = 0;
+		ans.resize(k+1);
 
-	printf("%s\n", ans.c_str());
+		char fir = k < sml.size()? sml[k] : 'A';
+		char sec = k < big.size()? big[k] : 'Z';
+
+		for(char i = fir;i <= sec;++i)
+		{
+			ans[k] = i;
+			if(ans < big && ans >= sml)
+				return ans;
+		}
+		ans[k] = fir;
+		++k;
+	}
+	return ans;
 }
 
 int main()
-{
+	{
 	char in[35];
 	while(scanf("%d", &n) && n)
 	{
 		guest.resize(n);
 		for(int i=0;i<n;++i) scanf("%s", in), guest[i] = in;
 		sort(guest.begin(), guest.end());
-		solve();
+		printf("%s\n", solve().c_str());
 	}
 	return 0;
 }
