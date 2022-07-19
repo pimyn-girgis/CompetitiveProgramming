@@ -20,16 +20,14 @@ void solve()
 		else if(fir == 'm') val = 2;
 		else val = 1;
 
-		ans += val *(pow(10, k++));
+		ans = ans * 10 + val;
 
 		token = strtok(0, "-");
 	} while (token);
 
 	while(ans < 1e9)
-	{
-		ans *= 10;
-		ans += 2;
-	}
+		ans = ans * 10 + 2;
+
 	leader[ans].push_back(name);
 }
 
