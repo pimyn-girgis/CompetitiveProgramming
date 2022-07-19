@@ -4,71 +4,72 @@ using namespace std;
 char atr[1000];
 char atrCopy[1000];
 char input[35];
-vector <string> order;
+int num;
+vector <string> curOrder;
 vector<vector<string> > arr;
 int sortVal;
 
 bool comp(vector<string> x, vector<string> y)
 {
-	auto xval = x.begin()[sortVal], yval = y.begin()[sortVal];
-	if(xval != yval) return xval < yval;
+    auto xiter = x.begin() + sortVal, yiter = y.begin() + sortVal;
+    if(*xiter != *yiter) return *xiter < *yiter;
 }
 
 void tokenize()
 {
-	int i = 0;
-	strcpy(atrCopy, atr);
-	char *token = strtok(atrCopy, " \n");
-	do
-	{
-		order.insert(order.begin() + i, token);
-		token = strtok(0, " \n");
-		++i;
-	} while (token);
+    int i = 0;
+    strcpy(atrCopy, atr);
+    char *token = strtok(atrCopy, " \n");
+    do
+    {
+        curOrder.insert(curOrder.begin() + i, token);
+        token = strtok(0, " \n");
+    } while (token && ++i);
 }
 
 void output()
 {
-	printf("%s", atr);
-	for(auto &u : arr)
-	{
-		for(auto &v : u)
-			printf(v == *u.begin()? "%s" : " %s", v.c_str());
-		printf("\n");
-	}
+    printf("%s", atr);
+    for(auto &u : arr)
+    {
+        for(auto &v : u)
+            printf(v == *u.begin()? "%s" : " %s", v.c_str());
+        printf("\n");
+    }
 }
 
 int main() 
 {
-	fgets(atr, 1000, stdin);
-	int num = 1 + count(atr, atr+strlen(atr), ' ');
-	order.resize(num);
-	tokenize();
+    fgets(atr, 1000, stdin);
+    num = 1 + count(atr, atr+strlen(atr), ' ');
+    curOrder.resize(num);
 
-	int count;
-	scanf("%d", &count);
-	arr.resize(count);
+    tokenize();
 
-	for(auto &u : arr)
-	{
-		for(int i=0;i<num;++i)
-		{
-			scanf("%s", input);
-			u.push_back(input);
-		}
-	}
+    int count;
+    scanf("%d", &count);
+    arr.resize(count);
 
-	int sortCount;
-	scanf("%d", &sortCount);
+    for(auto &u : arr)
+    {
+        for(int i=0;i<num;++i)
+        {
+            scanf("%s", input);
+            u.push_back(input);
+        }
+    }
 
-	while (sortCount--)
-	{
-		scanf("%s", input);
-		sortVal = find(order.begin(), order.end(), input) - order.begin();
-		stable_sort(arr.begin(), arr.end(), comp);
-		output();
-		if(sortCount) printf("\n");
-	}
+    int sortCount;
+    scanf("%d", &sortCount);
 
-	return 0;
+    while (sortCount--)
+    {
+        scanf("%s", input);
+        sortVal = find(curOrder.begin(), curOrder.end(), input) - curOrder.begin();
+        stable_sort(arr.begin(), arr.end(), comp);
+        output();
+        if(sortCount) printf("\n");
+    }
+
+    return 0;
 }
