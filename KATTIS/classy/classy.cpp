@@ -50,8 +50,9 @@ int main()
 		for(auto u = leader.rbegin(); u != leader.rend(); ++u)
 		{
 			sort(u->second.begin(), u->second.end());
-				for(auto n : u->second)
-					printf("%s\n", n.c_str());
+
+			for(auto n : u->second)
+				printf("%s\n", n.c_str());
 		}
 		for(int i=0;i<30;++i) printf("=");
 		printf("\n");
