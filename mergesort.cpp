@@ -1,7 +1,6 @@
 #include<cstdio>
 #include<cstdlib>
 #include<time.h>
-#include<iostream>
 #include<vector>
 
 using namespace std;
