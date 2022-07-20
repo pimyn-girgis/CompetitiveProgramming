@@ -9,40 +9,27 @@ vector <string> curOrder;
 vector<vector<string> > arr;
 int sortVal;
 
-bool comp(vector<string> x, vector<string> y)
-{
-    auto xiter = x.begin() + sortVal, yiter = y.begin() + sortVal;
-    if(*xiter != *yiter) return *xiter < *yiter;
-}
+bool comp(vector<string> const &x, vector<string> const &y){return x[sortVal] < y[sortVal];}
 
 void tokenize()
 {
-    int i = 0;
     strcpy(atrCopy, atr);
-    char *token = strtok(atrCopy, " \n");
-    do
-    {
-        curOrder.insert(curOrder.begin() + i, token);
-        token = strtok(0, " \n");
-    } while (token && ++i);
+	for(char *token = strtok(atrCopy, " \n");token;token = strtok(0, " \n"))
+        curOrder.push_back(token);
 }
 
 void output()
 {
     printf("%s", atr);
     for(auto &u : arr)
-    {
-        for(auto &v : u)
-            printf(v == *u.begin()? "%s" : " %s", v.c_str());
-        printf("\n");
-    }
+		for(int i = 0; i < u.size(); ++i)
+			printf("%s%c", u[i].c_str(), i == u.size() - 1 ? '\n' : ' ');
 }
 
 int main() 
 {
     fgets(atr, 1000, stdin);
     num = 1 + count(atr, atr+strlen(atr), ' ');
-    curOrder.resize(num);
 
     tokenize();
 
@@ -51,13 +38,8 @@ int main()
     arr.resize(count);
 
     for(auto &u : arr)
-    {
         for(int i=0;i<num;++i)
-        {
-            scanf("%s", input);
-            u.push_back(input);
-        }
-    }
+            scanf("%s", input), u.push_back(input);
 
     int sortCount;
     scanf("%d", &sortCount);
