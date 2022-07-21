@@ -1,49 +1,43 @@
 #include<cstdio>
+#include<cstring>
 #include<cstdlib>
 #include<time.h>
-#include<vector>
 
 using namespace std;
+#define MAX 100000
+#define ll long long int
 
-void merge(int *arr, int begin, int mid, int end)
+int sub[MAX];
+ll inversion_count;
+
+void mergesort(int *arr, int l, int r)
 {
-	int const leftSize = mid - begin +1; //size of left sub_array
-	int left[leftSize];
+	if(l == r) return;
 
-	int const rightSize = end - mid; //size of right sub_array
-	int right[rightSize];
+	int m = (l+r)/2;
+	mergesort(arr, l, m);
+	mergesort(arr, m+1, r);
 
-	for(int i=0;i<leftSize;++i) left[i] = arr[begin+i]; //populate left sub_array
+	int i = l, j = m+1, ind = 0;
+	while(i <= m && j <= r)
+		if(arr[i] < arr[j]) sub[ind++] = arr[i++];
+		else sub[ind++] = arr[j++], inversion_count += m - i + 1;
+	while(i <= m)
+		sub[ind++] = arr[i++];
+	while(j <= r)
+		sub[ind++] = arr[j++];
 
-	for(int i=0;i<rightSize;++i) right[i] = arr[mid+i+1]; //populate right sub_array
-
-	for(int i=begin, rightIndex=0, leftIndex=0;i<= end;++i) //sort the array
-		if(rightIndex < rightSize && leftIndex < leftSize)
-			arr[i] = (right[rightIndex] < left[leftIndex])? right[rightIndex++] : left[leftIndex++];
-		else if(rightIndex < rightSize)
-			arr[i] = right[rightIndex++];
-		else
-			arr[i] = left[leftIndex++];
+	memcpy(arr+l, sub, ind*(sizeof(int)));
 }
-
-void mergesort(int *arr, int begin, int end)
-{
-	if(end <= begin) return;
-
-	int mid = (end + begin) / 2;
-	mergesort(arr, begin, mid);
-	mergesort(arr, mid+1, end);
-	merge(arr, begin, mid, end);
-}
-
-void mergesort(int *arr, int size){mergesort(arr, 0, size-1);}
 
 int main()
 {
-	int n;
-	while (scanf("%d", &n) != EOF)
+	int values[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
+	for(auto &n : values)
 	{
+		if(n <= 0) continue;
 
+		inversion_count = 0;
 		int *arr = new int[n];
 	
 		srand(time(0));
@@ -53,8 +47,10 @@ int main()
 		printf("Array of size %d before merge sort:\n", n);
 
 		for(int i=0;i<n;++i) printf("%d%s", arr[i], i == n-1? "\n\n" : " ");
-	
-		mergesort(arr, n);
+
+		mergesort(arr, 0, n-1);
+
+		printf("Inversion count = %lld\n\n", inversion_count);
 	
 		printf("After merge sort:\n");
 		for(int i=0;i<n;++i) printf("%d%s", arr[i], i == n-1? "\n" : " ");
