@@ -30,7 +30,7 @@ void die(int l, int r)
 {
 	for(int i=l;i<=r;++i)
 		alive.reset(i);
-	for(int i=l-1;i<r;++i)
+	for(int i=r-1;i>l;--i)
 		right[i]=onRight(r);
 	for(int i=l+1;i<=r+1;++i)
 		left[i]=onLeft(l);

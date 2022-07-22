@@ -26,9 +26,8 @@ void solve()
 }
 int main()
 {
-	while(scanf("%s", line) != EOF)
+	while(scanf("%s%n", line, &len) != EOF)
 	{
-		len = strlen(line);
 		solve();
 		printf("%d\n", val);
 	}
