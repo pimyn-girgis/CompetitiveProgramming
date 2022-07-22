@@ -25,13 +25,13 @@ int main()
 {
 	memset(a, 0, sizeof(a));
 	memset(b, 0, sizeof(b));
-	int aval, bval;
+	int var1, var2;
 	
 	scanf("%d", &n);
 	for(int i=0;i<n;++i)
 	{
-		scanf("%d %d", &aval, &bval);
-		++a[aval-1], ++b[bval-1];
+		scanf("%d %d", &var1, &var2);
+		++a[var1-1], ++b[var2-1];
 		printf("%d\n", solve(0, size-1, 0, 0));
 	}
 	

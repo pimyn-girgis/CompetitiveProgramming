@@ -232,6 +232,19 @@ def submit(submit_url, cookies, problem, language, files, mainclass='', tag=''):
 def confirm_or_die(problem, language, files, mainclass, tag):
     print('Problem:', problem)
     print('Language:', language)
+    print('Files:', ', '.join(files))
+    if mainclass:
+        if language in _GUESS_MAINFILE:
+            print('Main file:', mainclass)
+        else:
+            print('Mainclass:', mainclass)
+    if tag:
+        print('Tag:', tag)
+    print('Submit (y/N)?')
+    if sys.stdin.readline().upper()[:-1] != 'Y':
+        print('Cancelling')
+        sys.exit(1)
+
 
 def open_submission(submit_response, cfg):
     submissions_url = get_url(cfg, 'submissionsurl', 'submissions')
