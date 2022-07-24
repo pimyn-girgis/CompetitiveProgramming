@@ -10,16 +10,16 @@
 std::vector<int> v;
 std::array<std::vector<int>, 1<<lb> buckets;
 
-void radix() {
-	for (int mask = (1 << lb) - 1, shift = 0; mask; mask <<= lb, shift += lb) {
-
-		for (const int x : v) {
-			buckets[(x & mask) >> shift].push_back(x);
-		}
+void radix()
+{
+	for (int mask = (1 << lb) - 1, shift = 0; mask; mask <<= lb, shift += lb)
+	{
+		for (const int x : v) buckets[(x & mask) >> shift].push_back(x);
 		
 		int idx = 0;
-		for (auto& b : buckets) {
-			memcpy(&v[0] + idx, &b[0], b.size() * sizeof(int));
+		for (auto& b : buckets)
+		{
+			memcpy(&v[idx], &b[0], b.size() * sizeof(int));
 			idx += b.size();
 			b.clear();
 		}
@@ -31,6 +31,7 @@ typedef long long int ll;
 int main() {
 	int TC; scanf("%d", &TC);
 	while (TC--) {
+
 		ll n, a, b, c, x, y;
 		scanf("%lld%lld%lld%lld%lld%lld", &n, &a, &b, &c, &x, &y);
 		
