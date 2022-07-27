@@ -29,7 +29,7 @@ int main()
 			}
 			else
 			{
-				if(val != -doll[top])
+				if(top < 0 || val != -doll[top])
 					correct = 0;
 				else --top;
 			}
