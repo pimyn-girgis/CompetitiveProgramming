@@ -8,6 +8,7 @@ int solve()
 	int ans = -1;
 	return ans;
 }
+
 int main()
 {
 	int caseNo = 0;
