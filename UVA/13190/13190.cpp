@@ -2,7 +2,7 @@
 using namespace std;
 
 #define si pair<string, int> 
-#define iis pair<int, pair<int, string> > 
+#define iis tuple<int, int, string> 
 #define is pair<int, string> 
 
 int main()
@@ -21,25 +21,27 @@ int main()
 		int val;
 
 		for(int i = 0; i < n; ++i)
-			scanf("%s %d", in, &val), freq[in] = val, pq.push(iis(val, make_pair(i, in)));
+			scanf("%s %d", in, &val), freq[in] = val, pq.push(iis(val, i, in));
 
 		int t = 0;
-		iis med(0, make_pair(0, " "));
+		iis med(0, 0, " ");
 
 		while(k--)
 		{
-			int val = med.first;
+			int val = get<0>(med);
 			med = pq.top(); pq.pop();
 
-			int f = med.first;
-			string s = med.second.second;
-			int i = med.second.first;
+			//auto [f, s, i] = med; C++ 17 doesn't work with UVA but allowed in ICPC
+
+			int f = get<0>(med);
+			string s = get<2>(med);
+			int i = get<1>(med);
 
 			t += abs(f - val);
 
 			printf("%d %s\n", t, s.c_str());
 
-			pq.push(iis(f + freq[s], is(i , s)));
+			pq.push(iis(f + freq[s], i , s));
 		}
 	}
 	return 0;
