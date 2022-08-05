@@ -1,4 +1,3 @@
-//https://open.kattis.com/problems/cd
 #include <bits/stdc++.h>
 #include <unordered_set>
 using namespace std;
