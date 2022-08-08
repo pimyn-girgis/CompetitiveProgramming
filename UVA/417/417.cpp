@@ -3,9 +3,9 @@ using namespace std;
 
 unordered_set<string> temp;
 unordered_map<string, int> pos;
-auto it = pos.begin();
-
+char word[10];
 int ind = 0;
+
 void init(int len, string str, char k)
 {
 	if(!len && temp.insert(str).second)
@@ -16,10 +16,10 @@ void init(int len, string str, char k)
 			init(len - 1, str + c, c);
 }
 
-char word[10];
-
 int main()
 {
+	pos.reserve(180000);
+	temp.reserve(int(1e7));
 	for(int i = 1; i <= 5; ++i)
 		init(i, "", 'a' - 1);
 

@@ -7,13 +7,14 @@ bool val[3000];
 bool jolly()
 {
 	for(int i=1;i<n;++i)
-		int dif = abs(arr[i-1] - arr[i]), val[dif-1] |= (dif < n);
+	{
+		int dif = abs(arr[i-1] - arr[i]);
 
-	for(int i=0;i<n-1;++i)
-		if(!val[i])
-			return 0;
+		if(dif < n && dif > 0)
+			val[dif-1] = 1;
+	}
 
-	return 1;
+	return all_of(val, val + n -1, [](bool k){return k;});
 }
 
 int main()
