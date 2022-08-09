@@ -1,12 +1,11 @@
 def foo 3
-def coo 4
-def aoo 5
-def boo 6
 calc foo + bar =
 def bar 7
 def programming 10
-def cool 16
 calc foo + bar =
+def is 4
+def fun 8
 calc programming - is + fun =
-calc foo + boo + bar = 
+def fun 1
+calc programming - is + fun =
 clear

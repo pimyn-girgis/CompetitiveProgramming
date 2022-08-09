@@ -16,14 +16,10 @@ int main()
 	vector <string> doc;
 	unordered_set <string> words;
 	unordered_map <string, int> freq;
-	doc.reserve(1e5 + 5);
-	words.reserve(1e5 + 5);
-	freq.reserve(1e5 + 5);
+	doc.reserve(1e5 + 5); words.reserve(1e5 + 5); freq.reserve(1e5 + 5);
 	for(int caseNo = 1; caseNo <= tc; ++caseNo)
 	{
-		doc.clear();
-		words.clear();
-		freq.clear();
+		doc.clear(); words.clear(); freq.clear();
 		char input[155];
 		int num = 0;
 

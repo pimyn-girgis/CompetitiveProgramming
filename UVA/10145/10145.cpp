@@ -10,12 +10,18 @@ int main()
 	{
 		char mode;
 		int trid, item;
-		while(scanf("%c", &mode))
+		unordered_set <int> blocked_trid;
+
+		while(scanf("%c", &mode) && mode != '#')
 		{
-			if(mode == '#')
-				break;
-			
-			scanf("%d %d", &trid, &item);
+			scanf("%d %d\n", &trid, &item);
+			//conflict : trid1 != trid2 && one lock is X
+			if(blocked_trid.find(trid) != blocked_trid.end())
+				printf("IGNORED");
+			else
+			{
+			}
+			printf("\n");
 		}
 	}
 	return 0;
