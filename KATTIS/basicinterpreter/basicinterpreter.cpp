@@ -15,8 +15,8 @@ void output(mp::iterator it, bool newline)
     char first = it->second[1][0];
 
     if(first == '"')
-        //for(int i = 1; i < it->second[1].size() - 1; ++i)
-                printf("%s", it->second[1].c_str() + 1);
+        for(int i = 1; i < it->second[1].size() - 1; ++i)
+                printf("%c", it->second[1][i]);
     else
         printf("%d", value[first - 'A']);
 
