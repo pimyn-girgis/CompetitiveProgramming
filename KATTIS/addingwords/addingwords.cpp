@@ -20,6 +20,8 @@ int main()
 
 		if(!strcmp(cmd, "def"))
 		{
+			if(dictionary.find(text[0]) != dictionary.end())
+				value.erase(dictionary[text[0]]);
 			dictionary[text[0]] = atoi(text[1]);
 			value[dictionary[text[0]]] = text[0];
 		}
@@ -46,8 +48,8 @@ int main()
 			}
 
 			pass &= (value.find(sum) != value.end());
-			for(auto &u : text) printf("%s ", u);
 
+			for(auto &u : text) printf("%s ", u);
 			printf("%s\n", pass?  value[sum].c_str() : "unknown");
 		}
 	}
