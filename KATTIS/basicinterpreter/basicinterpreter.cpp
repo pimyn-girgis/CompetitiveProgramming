@@ -37,14 +37,20 @@ void let(mp::iterator it)
         val = it->second[5];
         int rhs = isalpha(val[0])? value[val[0] - 'A'] : stoi(val);
 
-        if(op == '+')
-            newVal += rhs;
-        else if(op == '-')
-            newVal -= rhs;
-        else if(op == '*')
-            newVal *= rhs;
-        else if(op == '/')
-            newVal /= rhs;
+		switch(op)
+		{
+			case '+':
+				newVal += rhs;
+				break;
+			case '-':
+				newVal -= rhs;
+				break;
+			case '*':
+				newVal *= rhs;
+				break;
+			case '/':
+				newVal /= rhs;
+		}
     }
 
     value[cur] = newVal;

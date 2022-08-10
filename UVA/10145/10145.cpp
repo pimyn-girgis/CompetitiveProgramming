@@ -8,21 +8,33 @@ int main()
 
 	while (tc--)
 	{
-		char mode;
-		int trid, item;
+		unordered_map <int, vector< pair<int, char> > >lock; //item, trid, mode
 		unordered_set <int> blocked_trid;
 
-		while(scanf("%c", &mode) && mode != '#')
+		char mode;
+		int trid, item;
+
+		while(scanf("%c ", &mode), mode != '#')
 		{
+			bool denied = 0;
 			scanf("%d %d\n", &trid, &item);
-			//conflict : trid1 != trid2 && one lock is X
 			if(blocked_trid.find(trid) != blocked_trid.end())
-				printf("IGNORED");
+				printf("IGNORED\n");
 			else
 			{
+				bool denied = 0;
+				for(auto &u : lock[item])
+					if((u.second == 'X' || mode == 'X') && trid != u.first)
+						denied = 1, blocked_trid.insert(trid);
+
+				if(!denied)
+					lock[item].push_back(make_pair(trid, mode));
+
+				printf("%s\n", denied? "DENIED" : "GRANTED");
 			}
-			printf("\n");
 		}
+
+		if(tc) printf("\n");
 	}
 	return 0;
 }
