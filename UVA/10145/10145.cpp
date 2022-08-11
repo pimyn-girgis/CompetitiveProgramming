@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <bits/extc++.h>
 using namespace std;
 
 int main()
@@ -18,8 +19,10 @@ int main()
 		{
 			bool denied = 0;
 			scanf("%d %d\n", &trid, &item);
+
 			if(blocked_trid.find(trid) != blocked_trid.end())
 				printf("IGNORED\n");
+
 			else
 			{
 				bool denied = 0;
