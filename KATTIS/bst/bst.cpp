@@ -2,40 +2,45 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct node
-{
-	node *left;
-	node *right;
-	int val;
-};
-
-int insert(node *&cur, int input)
-{
-	if(cur)
-		return 1 + insert(cur->val > input? cur->left : cur->right, input);
-
-	cur = new node;
-
-	cur->left = 0;
-	cur->right = 0;
-	cur->val = input;
-
-	return 0;
-}
+int dist[300005];
 
 int main() 
 {
+	memset(dist, 0, sizeof(dist));
+
 	int n;
 	scanf("%d", &n);
 
-	node *root = nullptr;
+	set <int> bst;
 
 	long long unsigned int c = 0;
-	while(n--)
+	for(int i = 0; i < n; ++i)
 	{
 		int val;
 		scanf("%d", &val);
-		printf("%llu\n", c += insert(root, val));
+
+		auto cur =bst.insert(val).first;
+
+		int depth = 0;
+
+		if(i)
+		{
+			if(cur != bst.begin())
+			{
+				auto prev = cur;
+				depth = dist[*--prev] + 1;
+			}
+
+			if(cur != bst.end())
+			{
+				auto next = cur;
+				if(++next != bst.end())
+					depth = max(dist[*next] + 1, depth);
+			}
+		}
+
+		dist[val] = depth;
+		printf("%llu\n", c += depth);
 	}
 
 	return 0;
