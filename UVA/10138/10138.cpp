@@ -14,7 +14,7 @@ void solve()
 	{
 		for(auto it = u.second.begin(); it != u.second.end(); ++it)
 		{
-			auto ++next = it;
+			auto next = it;
 			++next;
 
 			if(next == u.second.end())
