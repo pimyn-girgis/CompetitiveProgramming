@@ -7,7 +7,7 @@ deque <int> tequeFront;
 
 void balance()
 {
-	while(tequeBack.size() < tequeFront.size() - 1)
+	while(tequeBack.size() < tequeFront.size())
 		tequeBack.push_front(tequeFront.back()), tequeFront.pop_back();
 
 	while(tequeBack.size() > tequeFront.size())
