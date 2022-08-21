@@ -30,6 +30,7 @@ typedef long long int ll;
 
 int main() {
 	int TC; scanf("%d", &TC);
+
 	while (TC--) {
 
 		ll n, a, b, c, x, y;
