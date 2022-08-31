@@ -5,7 +5,6 @@ import os
 import re
 import sys
 import webbrowser
-
 import requests
 import requests.exceptions
 

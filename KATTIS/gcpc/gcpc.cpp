@@ -2,8 +2,8 @@
 **************************************************************
 * Author  : Bemen Girgis
 * Contact : bemen@girgis.org
-* Problem : ##### UVA
-* Link    : https://onlinejudge.org/external/###/p#####.pdf
+* Problem : gcpc Kattis
+* Link    : https://open.kattis.com/problems/gcpc
 **************************************************************
 * Approach: 
 **************************************************************
@@ -16,5 +16,13 @@ using namespace __gnu_pbds;
 
 int main()
 {
+	int n, m;
+	scanf("%d %d", &n, &m);
+
+	for(int i = 0; i < m; ++i)
+	{
+		scanf("%d %d", &t, &p);
+	}
+
 	return 0;
 }

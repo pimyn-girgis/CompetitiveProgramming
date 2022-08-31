@@ -17,7 +17,7 @@ int main()
 
 		for(int i = 0;i + n - 1 < input.size(); ++i)
 		{
-			string str = string(input, i, n);
+			string str(input, i, n);
 			auto val = ++freq[str];
 			if(maxVal < val) maxVal = val, password = str; 
 		}
