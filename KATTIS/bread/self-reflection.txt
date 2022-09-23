@@ -1,0 +1,10 @@
+I currently possess what I presume as excellent knowledge of how different data structures operate, and I know which data structure to use to tackle which problem. I am also somewhat fluent in C++ and am aware of multiple built-in libraries and functions that help me solve different problems. I'm a relatively fast learner so new concepts do not require a lot of time for me to master.
+
+I would say my weakness is that I don't have experience with a lot of advanced level algorithms. However, I am willing to learn, and I'm consistently improving my skills.
+
+The best way for me to improve is by reading new concepts and practicing more and more. I have found that books are more desirable to my mind than any other source of learning like online-courses. I am willing to give this class 6 ~ 10 hours a week, since it's a relatively heavy semester for me, I cannot afford more than that, or it will affect my other classes and my extra-curriculars. However, I am flexible, and if I find that the class deserves more time, I am willing to allocate extra time for it.
+
+I like participating in class, I think it gives me an opportunity to help my classmates, and also will help me realize the mistakes in my thinking and improve the effeciency of my codes since the professor and my other classmates are there to point out my mistakes and/or optimizations.I am not a fan of group work, since unlike actual work, most professors ask us to deal with slackers on our own, which usually results in them not participating in work at all, and the rest of the team trying to compensate. However, it gives me an opportunity to see how other people approach problems.
+
+I have one question for the professor, how can I benefit the most of this class?
+

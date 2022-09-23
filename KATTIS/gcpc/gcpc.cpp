@@ -1,7 +1,7 @@
 /*
 **************************************************************
 * Author  : Bemen Girgis
-* Contact : bemen@girgis.org
+* Contact : pimyn@girgis.org
 * Problem : gcpc Kattis
 * Link    : https://open.kattis.com/problems/gcpc
 **************************************************************
@@ -14,15 +14,10 @@
 using namespace std;
 using namespace __gnu_pbds;
 
+typedef pair<int, int> pii;
+#define MAX int(1e5 + 5)
+
 int main()
 {
-	int n, m;
-	scanf("%d %d", &n, &m);
-
-	for(int i = 0; i < m; ++i)
-	{
-		scanf("%d %d", &t, &p);
-	}
-
 	return 0;
 }
