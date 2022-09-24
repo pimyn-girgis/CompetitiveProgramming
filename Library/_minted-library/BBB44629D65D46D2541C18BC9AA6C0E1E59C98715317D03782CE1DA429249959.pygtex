@@ -1,0 +1,51 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+cp}{\PYGZsh{}include}\PYG{c+cpf}{\PYGZlt{}bits/stdc++.h\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}define MAX 400}
+\PYG{k}{using}\PYG{+w}{ }\PYG{k}{namespace}\PYG{+w}{ }\PYG{n+nn}{std}\PYG{p}{;}
+\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{[}\PYG{n}{MAX}\PYG{p}{];}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{m}\PYG{p}{;}\PYG{+w}{	}\PYG{c+c1}{// pattern and length}
+\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{s}\PYG{p}{[}\PYG{n}{MAX}\PYG{p}{];}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{n}\PYG{p}{;}\PYG{+w}{	}\PYG{c+c1}{// string and length}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{f}\PYG{p}{[}\PYG{n}{MAX}\PYG{p}{];}
+\PYG{c+cm}{/* f[i] = length of the longest proper suffix of}
+\PYG{c+cm}{ * p[0, i] that is a prefix of p?}
+\PYG{c+cm}{ * It is the index should you start matching}
+\PYG{c+cm}{ * at if you fail at index (i + 1)?}
+\PYG{c+cm}{ * */}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{get\PYGZus{}f}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{c+cm}{/* return the length of the longest suffix of}
+\PYG{c+cm}{	 * \PYGZob{}p[0, i \PYGZhy{} 1], c\PYGZcb{} that is a prefix of p?}
+\PYG{c+cm}{	 * It is the index in p that you should continue matching at if you}
+\PYG{c+cm}{	 * have matched s[j, j + i \PYGZhy{} 1] = p[0, i\PYGZhy{}1] and found s[j + i] = c?}
+\PYG{c+cm}{	 * \PYGZhy{} Of course, it returns (i + 1) if (c == p[i])}
+\PYG{c+cm}{	 * \PYGZhy{} Memorize this function if you get a TLE :P}
+\PYG{c+cm}{	 */}
+\PYG{+w}{	}\PYG{k}{while}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{c}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}
+\PYG{+w}{		}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{f}\PYG{p}{[}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{];}
+\PYG{+w}{	}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{c}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}
+\PYG{+w}{		}\PYG{o}{++}\PYG{n}{i}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{preprocess}\PYG{p}{()\PYGZob{}}
+\PYG{+w}{	}\PYG{n}{f}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{	}\PYG{c+cm}{/* Since the length of the longest proper suffix}
+\PYG{c+cm}{	 * of p[0, 0] is 0}
+\PYG{c+cm}{	 * This also means that failure at index 1 gets you back to 0}
+\PYG{c+cm}{	*/}
+\PYG{+w}{	}\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{m}\PYG{p}{;}\PYG{+w}{ }\PYG{o}{++}\PYG{n}{i}\PYG{p}{)}
+\PYG{+w}{		}\PYG{n}{f}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{get\PYGZus{}f}\PYG{p}{(}\PYG{n}{f}\PYG{p}{[}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]);}
+\PYG{+w}{	}\PYG{c+cm}{/* This definition of f[i] means that the length of the longest}
+\PYG{c+cm}{	 * proper suffix of p[0, i] that is also a prefix of p is equal}
+\PYG{c+cm}{	 * to the length of the longest suffix of t that is also a prefix}
+\PYG{c+cm}{	 * of p, where t is \PYGZob{} the longest suffix of p[0, i \PYGZhy{} 1] that is a}
+\PYG{c+cm}{	 * prefix of p, concatenated with p[i] \PYGZcb{}}
+\PYG{c+cm}{	 */}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{match}\PYG{p}{()\PYGZob{}}
+\PYG{+w}{	}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{	}\PYG{c+cm}{/* Some applications might require you to store the}
+\PYG{c+cm}{	value of \PYGZsq{}j\PYGZsq{} as \PYGZsq{}i\PYGZsq{} goes along \PYGZsq{}s\PYGZsq{} */}
+\PYG{+w}{	}\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{n}\PYG{p}{;}\PYG{+w}{ }\PYG{o}{++}\PYG{n}{i}\PYG{p}{)}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{((}\PYG{n}{j}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{get\PYGZus{}f}\PYG{p}{(}\PYG{n}{j}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{s}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]))}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{m}\PYG{p}{)}
+\PYG{+w}{			}\PYG{c+c1}{// successful matching at this index in s}
+\PYG{+w}{			}\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZpc{}d}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{m}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{f}\PYG{p}{[}\PYG{n}{j}\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{];}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

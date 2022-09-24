@@ -1,0 +1,48 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+cp}{\PYGZsh{}include}\PYG{c+cpf}{\PYGZlt{}bits/stdc++.h\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}define MAX\PYGZus{}N 35}
+\PYG{c+cp}{\PYGZsh{}define MAX\PYGZus{}M 1000}
+\PYG{c+cp}{\PYGZsh{}define OO 10000000}
+\PYG{c+cp}{\PYGZsh{}define S 0}
+\PYG{c+cp}{\PYGZsh{}define T (MAX\PYGZus{}N \PYGZhy{} 1)}
+\PYG{k}{using}\PYG{+w}{ }\PYG{k}{namespace}\PYG{+w}{ }\PYG{n+nn}{std}\PYG{p}{;}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{head}\PYG{p}{[}\PYG{n}{MAX\PYGZus{}N}\PYG{p}{],}\PYG{+w}{  }\PYG{n}{to}\PYG{p}{[}\PYG{n}{MAX\PYGZus{}M}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{nxt}\PYG{p}{[}\PYG{n}{MAX\PYGZus{}M}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{cap}\PYG{p}{[}\PYG{n}{MAX\PYGZus{}M}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{work}\PYG{p}{[}\PYG{n}{MAX\PYGZus{}M}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{en}\PYG{p}{;}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{n}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{m}\PYG{p}{;}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{vis}\PYG{p}{[}\PYG{n}{MAX\PYGZus{}N}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{p}{\PYGZcb{},}\PYG{+w}{ }\PYG{n}{vis\PYGZus{}id}\PYG{p}{;}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{buy}\PYG{p}{;}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{dfs}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{cur\PYGZus{}flow}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{vis}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{vis\PYGZus{}id}\PYG{+w}{ }\PYG{o}{||}\PYG{+w}{ }\PYG{o}{!}\PYG{n}{cur\PYGZus{}flow}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{vis}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{vis\PYGZus{}id}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{T}\PYG{p}{)}
+\PYG{+w}{		}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{cur\PYGZus{}flow}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{head}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}\PYG{+w}{ }\PYG{o}{\PYGZti{}}\PYG{n}{j}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{nxt}\PYG{p}{[}\PYG{n}{j}\PYG{p}{])}
+\PYG{+w}{	}\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{f}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{dfs}\PYG{p}{(}\PYG{n}{to}\PYG{p}{[}\PYG{n}{j}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{min}\PYG{p}{(}\PYG{n}{cur\PYGZus{}flow}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{cap}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]));}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{f}\PYG{p}{)}
+\PYG{+w}{		}\PYG{p}{\PYGZob{}}
+\PYG{+w}{			}\PYG{n}{cap}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{\PYGZhy{}=}\PYG{+w}{ }\PYG{n}{f}\PYG{p}{;}
+\PYG{+w}{			}\PYG{n}{cap}\PYG{p}{[}\PYG{n}{j}\PYG{+w}{ }\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{+=}\PYG{+w}{ }\PYG{n}{f}\PYG{p}{;}
+\PYG{+w}{			}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{f}\PYG{p}{;}
+\PYG{+w}{		}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{max\PYGZus{}flow}\PYG{p}{()}
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{c+c1}{// save the original capacities (in case you need them later)}
+\PYG{+w}{	}\PYG{n}{memcpy}\PYG{p}{(}\PYG{n}{work}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{cap}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{sizeof}\PYG{+w}{ }\PYG{n}{cap}\PYG{p}{);}
+\PYG{+w}{	}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{ans}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{while}\PYG{p}{(}\PYG{n+nb}{true}\PYG{p}{)}
+\PYG{+w}{	}\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{o}{++}\PYG{n}{vis\PYGZus{}id}\PYG{p}{;}
+\PYG{+w}{		}\PYG{c+c1}{// search for a path from source to sink}
+\PYG{+w}{		}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{cur}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{dfs}\PYG{p}{(}\PYG{n}{S}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{OO}\PYG{p}{);}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{!}\PYG{n}{cur}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{break}\PYG{p}{;}
+\PYG{+w}{		}\PYG{n}{ans}\PYG{+w}{ }\PYG{o}{+=}\PYG{+w}{ }\PYG{n}{cur}\PYG{p}{;}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{c+c1}{// restore the original capacities}
+\PYG{+w}{	}\PYG{n}{memcpy}\PYG{p}{(}\PYG{n}{cap}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{work}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{sizeof}\PYG{+w}{ }\PYG{n}{cap}\PYG{p}{);}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{ans}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

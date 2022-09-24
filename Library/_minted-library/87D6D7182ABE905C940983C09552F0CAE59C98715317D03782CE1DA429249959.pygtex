@@ -1,0 +1,68 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}bits/stdc++.h\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}define avg(a, b) (((a) + (b)) * 0,5)}
+\PYG{k}{using}\PYG{+w}{ }\PYG{k}{namespace}\PYG{+w}{ }\PYG{n+nn}{std}\PYG{p}{;}
+\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{eps}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{1e\PYGZhy{}5}\PYG{p}{;}
+
+\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n+nf}{adaptive\PYGZus{}simpsons\PYGZus{}aux}\PYG{p}{(}\PYG{k+kt}{double}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{*}\PYG{n}{f}\PYG{p}{)(}\PYG{k+kt}{double}\PYG{p}{),}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{,}
+\PYG{+w}{		}\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{epsilon}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{area}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{fa}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{fb}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{fc}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{bottom}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{c+c1}{// middle point}
+\PYG{+w}{	}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{c}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{avg}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{);}
+
+\PYG{+w}{	}\PYG{c+c1}{// length of interval}
+\PYG{+w}{	}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{h}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{b}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{;}
+
+\PYG{+w}{	}\PYG{c+c1}{// middle point in interval 1}
+\PYG{+w}{	}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{d}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{avg}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{);}
+
+\PYG{+w}{	}\PYG{c+c1}{// middle point in interval 2}
+\PYG{+w}{	}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{e}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{avg}\PYG{p}{(}\PYG{n}{c}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{);}
+
+\PYG{+w}{	}\PYG{c+c1}{// graph heights}
+\PYG{+w}{	}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{fd}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{f}\PYG{p}{(}\PYG{n}{d}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{fe}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{f}\PYG{p}{(}\PYG{n}{e}\PYG{p}{);}
+
+\PYG{+w}{	}\PYG{c+c1}{// estimated area in left subinterval}
+\PYG{+w}{	}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{area\PYGZus{}left}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{h}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{l+m+mf}{12.0}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{fa}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mf}{4.0}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{fd}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{fc}\PYG{p}{);}
+
+\PYG{+w}{	}\PYG{c+c1}{// estimated area in right subinterval}
+\PYG{+w}{	}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{area\PYGZus{}right}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{h}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{l+m+mf}{12.0}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{fc}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mf}{4.0}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{fe}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{fb}\PYG{p}{);}
+
+\PYG{+w}{	}\PYG{c+c1}{// total area}
+\PYG{+w}{	}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{area\PYGZus{}tot}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{area\PYGZus{}left}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{area\PYGZus{}right}\PYG{p}{;}
+
+\PYG{+w}{	}\PYG{c+c1}{// bottom out}
+\PYG{+w}{	}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{bottom}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{o}{||}\PYG{+w}{ }\PYG{n}{fabs}\PYG{p}{(}\PYG{n}{area\PYGZus{}tot}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{area}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{l+m+mf}{15.0}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{epsilon}\PYG{p}{)}
+\PYG{+w}{		}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{area\PYGZus{}tot}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{area\PYGZus{}tot}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{area}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{l+m+mf}{15.0}\PYG{p}{;}
+
+\PYG{+w}{	}\PYG{c+c1}{// recurse}
+\PYG{+w}{	}\PYG{k}{return}
+\PYG{+w}{			}\PYG{n}{adaptive\PYGZus{}simpsons\PYGZus{}aux}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{epsilon}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{l+m+mf}{0.5}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{area\PYGZus{}left}\PYG{p}{,}
+\PYG{+w}{					}\PYG{n}{fa}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{fc}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{fd}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{bottom}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{+w}{			}\PYG{o}{+}\PYG{+w}{ }\PYG{n}{adaptive\PYGZus{}simpsons\PYGZus{}aux}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{epsilon}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{l+m+mf}{0.5}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{area\PYGZus{}right}\PYG{p}{,}
+\PYG{+w}{					}\PYG{n}{fc}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{fb}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{fe}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{bottom}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n+nf}{adaptive\PYGZus{}simpsons}\PYG{p}{(}
+\PYG{+w}{		}\PYG{k+kt}{double}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{*}\PYG{n}{f}\PYG{p}{)(}\PYG{k+kt}{double}\PYG{p}{),}\PYG{+w}{            }\PYG{c+c1}{// pointer to function}
+\PYG{+w}{		}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{,}\PYG{+w}{ }\PYG{c+c1}{// interval [a,b]}
+\PYG{+w}{		}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{epsilon}\PYG{p}{,}\PYG{+w}{           }\PYG{c+c1}{// error tolerance}
+\PYG{+w}{		}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{max\PYGZus{}rec\PYGZus{}depth}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{10}\PYG{p}{)}\PYG{+w}{   }\PYG{c+c1}{// maximum recursion depth}
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{c+c1}{// middle point}
+\PYG{+w}{	}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{c}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{avg}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{);}
+
+\PYG{+w}{	}\PYG{c+c1}{// length of interval}
+\PYG{+w}{	}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{h}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{b}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{;}
+
+\PYG{+w}{	}\PYG{c+c1}{// graph heights}
+\PYG{+w}{	}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{fa}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{f}\PYG{p}{(}\PYG{n}{a}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{fb}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{f}\PYG{p}{(}\PYG{n}{b}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{fc}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{f}\PYG{p}{(}\PYG{n}{c}\PYG{p}{);}
+
+\PYG{+w}{	}\PYG{c+c1}{// weighted average of rectangle area}
+\PYG{+w}{	}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{area}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{h}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{l+m+mf}{6.0}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{fa}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mf}{4.0}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{fc}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{fb}\PYG{p}{);}
+
+\PYG{+w}{	}\PYG{c+c1}{// find answer}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{adaptive\PYGZus{}simpsons\PYGZus{}aux}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{epsilon}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{area}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{fa}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{fb}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{fc}\PYG{p}{,}
+\PYG{+w}{			}\PYG{n}{max\PYGZus{}rec\PYGZus{}depth}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

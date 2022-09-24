@@ -1,0 +1,72 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+cm}{/* One way to find bi\PYGZhy{}connected components is to first detect articulation}
+\PYG{c+cm}{nodes and DFS once more without visiting articulation nodes */}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{head}\PYG{p}{[}\PYG{n}{MAX}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{to}\PYG{p}{[}\PYG{n}{MAX}\PYG{o}{*}\PYG{n}{MAX}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{nxt}\PYG{p}{[}\PYG{n}{MAX}\PYG{o}{*}\PYG{n}{MAX}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{en}\PYG{p}{;}
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{addEdge}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{y}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{	}\PYG{n}{nxt}\PYG{p}{[}\PYG{n}{en}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{head}\PYG{p}{[}\PYG{n}{x}\PYG{p}{];}
+\PYG{+w}{	}\PYG{n}{head}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{en}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{to}\PYG{p}{[}\PYG{n}{en}\PYG{o}{++}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{y}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{addBiEdge}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{y}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{	}\PYG{n}{addEdge}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{y}\PYG{p}{);}\PYG{+w}{ }\PYG{n}{addEdge}\PYG{p}{(}\PYG{n}{y}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{typedef}\PYG{+w}{ }\PYG{n}{pair}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{ii}\PYG{p}{;}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{n}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{m}\PYG{p}{;}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{root}\PYG{p}{;}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{counter}\PYG{p}{;}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{children}\PYG{p}{;}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{child}\PYG{p}{[}\PYG{n}{MAX}\PYG{p}{];}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{dfs\PYGZus{}p}\PYG{p}{[}\PYG{n}{MAX}\PYG{p}{];}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{dfs\PYGZus{}num}\PYG{p}{[}\PYG{n}{MAX}\PYG{p}{];}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{dfs\PYGZus{}low}\PYG{p}{[}\PYG{n}{MAX}\PYG{p}{];}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{val}\PYG{p}{[}\PYG{n}{MAX}\PYG{p}{];}
+\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{art}\PYG{p}{[}\PYG{n}{MAX}\PYG{p}{];}
+\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{bridge}\PYG{p}{[}\PYG{n}{MAX}\PYG{o}{*}\PYG{n}{MAX}\PYG{p}{];}
+\PYG{k+kr}{inline}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{dfs}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{	}\PYG{n}{dfs\PYGZus{}low}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{dfs\PYGZus{}num}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{counter}\PYG{o}{++}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{k}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{head}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{j}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{k}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{k}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{nxt}\PYG{p}{[}\PYG{n}{k}\PYG{p}{])}
+\PYG{+w}{	}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{dfs\PYGZus{}num}\PYG{p}{[}\PYG{n}{j}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{to}\PYG{p}{[}\PYG{n}{k}\PYG{p}{]]}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{		}\PYG{n}{dfs\PYGZus{}p}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{;}
+\PYG{+w}{		}\PYG{n}{children}\PYG{+w}{ }\PYG{o}{+=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{root}\PYG{p}{);}
+\PYG{+w}{		}\PYG{n}{dfs}\PYG{p}{(}\PYG{n}{j}\PYG{p}{);}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{dfs\PYGZus{}low}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{\PYGZgt{}=}\PYG{+w}{ }\PYG{n}{dfs\PYGZus{}num}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}
+\PYG{+w}{			}\PYG{n}{art}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{++}\PYG{n}{child}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+\PYG{+w}{			}\PYG{c+cm}{/* \PYGZsq{}child[i]\PYGZsq{} stores value 1 less than the number of}
+\PYG{c+cm}{			DFS children of \PYGZsq{}i\PYGZsq{}...  Alternatively, you can loop}
+\PYG{c+cm}{			over the array \PYGZsq{}dfs\PYGZus{}p\PYGZsq{} after you are done and}
+\PYG{c+cm}{			increment child[dfs\PYGZus{}p[i]] for all i... Alternatively,}
+\PYG{c+cm}{			\PYGZsq{}child[i]\PYGZsq{} could be a vector where you push}
+\PYG{c+cm}{			representative nodes of the child components of i}
+\PYG{c+cm}{			(components of G \PYGZhy{} i), but I am not sure how useful}
+\PYG{c+cm}{			this approach could be! */}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{dfs\PYGZus{}low}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{dfs\PYGZus{}low}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}
+\PYG{+w}{			}\PYG{n}{bridge}\PYG{p}{[}\PYG{n}{k}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{bridge}\PYG{p}{[}\PYG{n}{k}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{;}
+\PYG{+w}{		}\PYG{n}{dfs\PYGZus{}low}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{min}\PYG{p}{(}\PYG{n}{dfs\PYGZus{}low}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{dfs\PYGZus{}low}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]);}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{k}{else}\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{j}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{n}{dfs\PYGZus{}p}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}
+\PYG{+w}{		}\PYG{c+cm}{/* You don\PYGZsq{}t have to store parent nodes in DFS.}
+\PYG{c+cm}{		You can send to each DFS call the parent id as a parameter}
+\PYG{c+cm}{		Alternatively, you can send the edge id (This will specially}
+\PYG{c+cm}{		be useful if multiple edges are allowed) */}
+\PYG{+w}{		}\PYG{n}{dfs\PYGZus{}low}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{min}\PYG{p}{(}\PYG{n}{dfs\PYGZus{}low}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{dfs\PYGZus{}num}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]);}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kr}{inline}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{init}\PYG{p}{()\PYGZob{}}
+\PYG{+w}{	}\PYG{n}{memset}\PYG{p}{(}\PYG{n}{art}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{sizeof}\PYG{+w}{ }\PYG{n}{art}\PYG{p}{);}\PYG{+w}{            }\PYG{c+c1}{// no articulation points}
+\PYG{+w}{	}\PYG{n}{memset}\PYG{p}{(}\PYG{n}{bridge}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{sizeof}\PYG{+w}{ }\PYG{n}{bridge}\PYG{p}{);}\PYG{+w}{      }\PYG{c+c1}{// no bridges}
+\PYG{+w}{	}\PYG{n}{memset}\PYG{p}{(}\PYG{n}{child}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{sizeof}\PYG{+w}{ }\PYG{n}{child}\PYG{p}{);}\PYG{+w}{        }\PYG{c+c1}{// no DFS children}
+\PYG{+w}{	}\PYG{n}{memset}\PYG{p}{(}\PYG{n}{dfs\PYGZus{}num}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mh}{0xFF}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{sizeof}\PYG{+w}{ }\PYG{n}{dfs\PYGZus{}num}\PYG{p}{);}\PYG{+w}{ }\PYG{c+c1}{// no one is visited}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{main}\PYG{p}{()\PYGZob{}}
+\PYG{+w}{	}\PYG{n}{init}\PYG{p}{();}
+\PYG{+w}{	}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{numCC}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{n}\PYG{p}{;}\PYG{+w}{ }\PYG{o}{++}\PYG{n}{i}\PYG{p}{)}
+\PYG{+w}{	}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{dfs\PYGZus{}num}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{		}\PYG{o}{++}\PYG{n}{numCC}\PYG{p}{;}
+\PYG{+w}{		}\PYG{n}{root}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{;}
+\PYG{+w}{		}\PYG{n}{counter}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{children}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{		}\PYG{n}{dfs\PYGZus{}p}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{;}
+\PYG{+w}{		}\PYG{n}{dfs}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{art}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{children}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{child}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{children}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

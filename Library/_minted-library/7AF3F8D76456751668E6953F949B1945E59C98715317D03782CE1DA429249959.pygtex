@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+c1}{// Compute the power of a prime p in the factorial of n.}
+\PYG{c+c1}{// For example, the power of 3 in 10! is 4.}
+\PYG{c+c1}{// I.e. 10! is divisible by 3 x 3 x 3 x 3.}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{power}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ll}\PYG{+w}{ }\PYG{n}{n}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{	}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{ans}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{ll}\PYG{+w}{ }\PYG{n}{temp}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{while}\PYG{p}{(}\PYG{n}{temp}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{n}\PYG{p}{)}
+\PYG{+w}{		}\PYG{n}{ans}\PYG{+w}{ }\PYG{o}{+=}\PYG{+w}{ }\PYG{n}{n}\PYG{o}{/}\PYG{n}{temp}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{temp}\PYG{+w}{ }\PYG{o}{*=}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{ans}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

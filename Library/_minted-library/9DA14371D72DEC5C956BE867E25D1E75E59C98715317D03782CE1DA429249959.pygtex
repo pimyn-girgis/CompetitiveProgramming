@@ -1,0 +1,28 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+cp}{\PYGZsh{}define MAX 32}
+\PYG{c+c1}{// a list of elements}
+\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{list}\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{files}\PYG{p}{;}\PYG{+w}{	}\PYG{c+c1}{// elements on this list}
+\PYG{+w}{	}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{cost}\PYG{p}{;}\PYG{+w}{	}\PYG{c+c1}{// total cost of elements in this set}
+\PYG{p}{\PYGZcb{};}
+\PYG{k+kr}{inline}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{k}{operator}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{list}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{n}{list}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{cost}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{.}\PYG{n}{cost}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{?}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{.}\PYG{n}{cost}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{.}\PYG{n}{cost}\PYG{o}{:}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{.}\PYG{n}{files}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{.}\PYG{n}{files}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{set}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{list}\PYG{o}{\PYGZgt{}}\PYG{n}{s}\PYG{p}{;}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{main}\PYG{p}{()\PYGZob{}}
+\PYG{+w}{	}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{n}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{scanf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZpc{}d\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{n}\PYG{p}{);}
+\PYG{+w}{	}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{n}\PYG{p}{;}\PYG{+w}{ }\PYG{o}{++}\PYG{n}{i}\PYG{p}{)}
+\PYG{+w}{		}\PYG{n}{scanf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZpc{}d\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{x}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{s}\PYG{p}{.}\PYG{n}{insert}\PYG{p}{(}\PYG{n}{list}\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{x}\PYG{+w}{ }\PYG{p}{\PYGZcb{});}
+\PYG{+w}{	}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{totalCost}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{while}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{s}\PYG{p}{.}\PYG{n}{size}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{		}\PYG{n}{list}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{s}\PYG{p}{.}\PYG{n}{begin}\PYG{p}{();}\PYG{+w}{ }\PYG{n}{s}\PYG{p}{.}\PYG{n}{erase}\PYG{p}{(}\PYG{n}{s}\PYG{p}{.}\PYG{n}{begin}\PYG{p}{());}
+\PYG{+w}{		}\PYG{n}{list}\PYG{+w}{ }\PYG{n}{b}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{s}\PYG{p}{.}\PYG{n}{begin}\PYG{p}{();}\PYG{+w}{ }\PYG{n}{s}\PYG{p}{.}\PYG{n}{erase}\PYG{p}{(}\PYG{n}{s}\PYG{p}{.}\PYG{n}{begin}\PYG{p}{());}
+\PYG{+w}{		}\PYG{n}{s}\PYG{p}{.}\PYG{n}{insert}\PYG{p}{(}\PYG{n}{list}\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{.}\PYG{n}{files}\PYG{+w}{ }\PYG{o}{|}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{.}\PYG{n}{files}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{.}\PYG{n}{cost}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{.}\PYG{n}{cost}\PYG{+w}{ }\PYG{p}{\PYGZcb{});}
+\PYG{+w}{		}\PYG{n}{totalCost}\PYG{+w}{ }\PYG{o}{+=}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{.}\PYG{n}{cost}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{.}\PYG{n}{cost}\PYG{p}{;}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Total cost = \PYGZpc{}d}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{totalCost}\PYG{p}{);}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

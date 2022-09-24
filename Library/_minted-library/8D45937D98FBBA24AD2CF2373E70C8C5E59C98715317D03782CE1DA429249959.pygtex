@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+cm}{/* The legend says that the extended Euclid algorithm}
+\PYG{c+cm}{produces the solution (x, y) for which |x| + |y| is minimal}
+\PYG{c+cm}{and x \PYGZlt{}= y */}
+\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{answer}\PYG{p}{\PYGZob{}}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{d}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{y}\PYG{p}{;\PYGZcb{}}
+\PYG{n}{answer}\PYG{+w}{ }\PYG{n}{euclid}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{	}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{!}\PYG{n}{b}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{answer}\PYG{p}{\PYGZob{}}\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{\PYGZcb{};}
+\PYG{+w}{	}\PYG{n}{answer}\PYG{+w}{ }\PYG{n}{temp}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{euclid}\PYG{p}{(}\PYG{n}{b}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{o}{\PYGZpc{}}\PYG{n}{b}\PYG{p}{);}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{answer}\PYG{p}{\PYGZob{}}\PYG{n}{temp}\PYG{p}{.}\PYG{n}{d}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{temp}\PYG{p}{.}\PYG{n}{y}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{temp}\PYG{p}{.}\PYG{n}{x}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{a}\PYG{o}{/}\PYG{n}{b}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{temp}\PYG{p}{.}\PYG{n}{y}\PYG{p}{)\PYGZcb{};}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/* If (x\PYGZus{}0, y\PYGZus{}0) is a particular solution, then all other}
+\PYG{c+cm}{solutions have the form (x\PYGZus{}0 + (b/d)*k, y\PYGZus{}0 + (a/d)*k) */}
+\end{Verbatim}

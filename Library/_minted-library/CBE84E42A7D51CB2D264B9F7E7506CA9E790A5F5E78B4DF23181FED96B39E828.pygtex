@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{n+nv}{COUNTER}\PYG{o}{=}\PYG{l+m}{1}
+\PYG{k}{while} true\PYG{p}{;} \PYG{k}{do}
+	\PYG{n+nv}{N}\PYG{o}{=}\PYG{k}{\PYGZdl{}((}\PYG{n+nv}{\PYGZdl{}RANDOM} \PYG{o}{\PYGZpc{}} \PYG{l+m}{10} \PYG{o}{+} \PYG{l+m}{2}\PYG{k}{))}
+
+	\PYG{n+nb}{echo} \PYG{n+nv}{\PYGZdl{}N} \PYGZgt{} input.txt
+
+	\PYG{k}{for} \PYG{o}{((}\PYG{n+nv}{i}\PYG{o}{=}\PYG{l+m}{0}\PYG{p}{;}i\PYGZlt{}\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{N}\PYG{l+s+si}{\PYGZcb{}}\PYG{p}{;}\PYG{n+nv}{i}\PYG{o}{=}i+1\PYG{o}{))}\PYG{p}{;} \PYG{k}{do}
+		\PYG{n+nb}{echo} \PYG{k}{\PYGZdl{}((}\PYG{n+nv}{\PYGZdl{}RANDOM} \PYG{o}{\PYGZpc{}} \PYG{l+m}{1000} \PYG{o}{+} \PYG{l+m}{1}\PYG{k}{))} \PYGZgt{}\PYGZgt{} input.txt
+	\PYG{k}{done}
+	\PYG{n+nb}{echo} \PYG{n+nv}{\PYGZdl{}COUNTER}
+	\PYG{n+nv}{COUNTER}\PYG{o}{=}\PYG{k}{\PYGZdl{}((}COUNTER \PYG{o}{+} \PYG{l+m}{1}\PYG{k}{))}
+	./a.out \PYGZgt{} output.txt \PYG{o}{||} \PYG{n+nb}{exit} \PYG{l+m}{1}
+\PYG{k}{done}
+\end{Verbatim}

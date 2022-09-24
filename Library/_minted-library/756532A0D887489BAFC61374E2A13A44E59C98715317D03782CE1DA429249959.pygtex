@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+cm}{/* Given an interval I, and an array arr[] of n ordered pairs}
+\PYG{c+cm}{ * each ordered pair represents a range in I}
+\PYG{c+cm}{ * find the minimum number of subintervals in arr[] that cover all of I}
+\PYG{c+cm}{ */}
+\end{Verbatim}

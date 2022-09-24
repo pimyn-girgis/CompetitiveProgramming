@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{compress}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{arr}\PYG{p}{[],}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{arrSz}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{\PYGZus{}rank}\PYG{p}{[],}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{sz}\PYG{p}{[])\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{sort}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{arr}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{arrSz}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{arrSz}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{unique}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{arr}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{arrSz}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{arr}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{sz}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{prv}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{nxt}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{arrSz}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{if}\PYG{p}{(}\PYG{n}{prv}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{n}{arr}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}
+\PYG{+w}{            }\PYG{n}{sz}\PYG{p}{[}\PYG{n}{nxt}\PYG{o}{++}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{arr}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{prv}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{sz}\PYG{p}{[}\PYG{n}{nxt}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{prv}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{arr}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+\PYG{+w}{        }\PYG{n}{\PYGZus{}rank}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{nxt}\PYG{o}{++}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{nxt}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

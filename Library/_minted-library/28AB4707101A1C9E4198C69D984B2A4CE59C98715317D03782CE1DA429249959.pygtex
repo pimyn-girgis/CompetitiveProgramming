@@ -1,0 +1,25 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{AC}\PYG{p}{[}\PYG{l+m+mi}{10000}\PYG{p}{];}
+\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{WA}\PYG{p}{[}\PYG{l+m+mi}{10000}\PYG{p}{];}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{main}\PYG{p}{()\PYGZob{}}
+\PYG{+w}{	}\PYG{n}{system}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}g++ \PYGZhy{}o AC AC.cpp\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{	}\PYG{n}{system}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}g++ \PYGZhy{}o WA WA.cpp\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{	}\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{tc}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}\PYG{+w}{ }\PYG{p}{;}\PYG{n}{tc}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{		}\PYG{n}{fstream}\PYG{+w}{ }\PYG{n}{file}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Input.txt\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{		}\PYG{c+cm}{/*}
+\PYG{c+cm}{		PRINT THE OUTPUT TO FILE HERE!}
+\PYG{c+cm}{		*/}
+\PYG{+w}{		}\PYG{n}{system}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}./AC\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{		}\PYG{n}{system}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}./WA\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{		}\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{;}
+\PYG{+w}{		}\PYG{n}{freopen}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}AC.txt\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}r\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{stdin}\PYG{p}{);}
+\PYG{+w}{		}\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{scanf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZpc{}c\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{c}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{n}{EOF}\PYG{p}{;}\PYG{+w}{ }\PYG{o}{++}\PYG{n}{i}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{AC}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{;}
+\PYG{+w}{		}\PYG{n}{freopen}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}WA.txt\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}r\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{stdin}\PYG{p}{);}
+\PYG{+w}{		}\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{scanf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZpc{}c\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{c}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{n}{EOF}\PYG{p}{;}\PYG{+w}{ }\PYG{o}{++}\PYG{n}{i}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{WA}\PYG{p}{[}\PYG{n}{i}\PYG{o}{++}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{;}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{strcmp}\PYG{p}{(}\PYG{n}{AC}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{WA}\PYG{p}{))}
+\PYG{+w}{		}\PYG{p}{\PYGZob{}}
+\PYG{+w}{			}\PYG{k}{break}\PYG{p}{;}
+\PYG{+w}{		}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

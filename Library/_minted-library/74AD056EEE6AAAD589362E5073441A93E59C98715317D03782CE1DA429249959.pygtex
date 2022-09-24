@@ -1,0 +1,30 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{n}{pair}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{pair}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{elephant}\PYG{p}{[}\PYG{n}{numElements}\PYG{p}{];}
+
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{state}\PYG{p}{[}\PYG{n}{numElements}\PYG{p}{][}\PYG{n}{numElements}\PYG{p}{];}
+\PYG{c+c1}{// state[i][j] stores the length of the longest increasing}
+\PYG{c+c1}{// subsequence starting at index i, knowing that the last}
+\PYG{c+c1}{// element you have selected was indexed j!}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{LIS}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{ind}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{prevInd}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{	}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{ind}\PYG{+w}{ }\PYG{o}{\PYGZgt{}=}\PYG{+w}{ }\PYG{n}{counter}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{   }\PYG{c+c1}{// Base case: all elements consumed!}
+\PYG{+w}{	}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{state}\PYG{p}{[}\PYG{n}{ind}\PYG{p}{][}\PYG{n}{prevInd}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{)}
+\PYG{+w}{		}\PYG{c+c1}{// check if previously computed!}
+\PYG{+w}{		}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{state}\PYG{p}{[}\PYG{n}{ind}\PYG{p}{][}\PYG{n}{prevInd}\PYG{p}{];}
+
+\PYG{+w}{	}\PYG{c+c1}{// Get the result if you skip this element.}
+\PYG{+w}{	}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{res}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{LIS}\PYG{p}{(}\PYG{n}{ind}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{prevInd}\PYG{p}{);}
+\PYG{+w}{	}\PYG{c+c1}{// If taking this element is legitimate, try it, and compare}
+\PYG{+w}{	}\PYG{c+c1}{// the result that would be obtained with/o taking this}
+\PYG{+w}{	}\PYG{c+c1}{// element, and return the larger one!}
+\PYG{+w}{	}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{elephant}\PYG{p}{[}\PYG{n}{ind}\PYG{p}{].}\PYG{n}{first}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{elephant}\PYG{p}{[}\PYG{n}{prevInd}\PYG{p}{].}\PYG{n}{first}
+\PYG{+w}{		}\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{elephant}\PYG{p}{[}\PYG{n}{ind}\PYG{p}{].}\PYG{n}{second}\PYG{p}{.}\PYG{n}{first}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{elephant}\PYG{p}{[}\PYG{n}{prevInd}\PYG{p}{].}\PYG{n}{second}\PYG{p}{.}\PYG{n}{first}\PYG{p}{)}
+\PYG{+w}{	}\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{n}{state}\PYG{p}{[}\PYG{n}{ind}\PYG{p}{][}\PYG{n}{prevInd}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{max}\PYG{p}{(}\PYG{n}{res}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{LIS}\PYG{p}{(}\PYG{n}{ind}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ind}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{+w}{		}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{state}\PYG{p}{[}\PYG{n}{ind}\PYG{p}{][}\PYG{n}{prevInd}\PYG{p}{];}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{c+c1}{// If taking this element is not possible from the first place,}
+\PYG{+w}{	}\PYG{c+c1}{// just return the result that is obtained by skipping it!}
+\PYG{+w}{	}\PYG{n}{state}\PYG{p}{[}\PYG{n}{ind}\PYG{p}{][}\PYG{n}{prevInd}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{res}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{state}\PYG{p}{[}\PYG{n}{ind}\PYG{p}{][}\PYG{n}{prevInd}\PYG{p}{];}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

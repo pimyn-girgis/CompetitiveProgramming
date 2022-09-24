@@ -1,0 +1,1406 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.24)  24 SEP 2022 22:50
+entering extended mode
+ \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**library.tex
+(./library.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24> (/usr/local/texlive/2022/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/bk12.clo
+File: bk12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@chapter=\count186
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\c@figure=\count192
+\c@table=\count193
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks16
+\pgfutil@tempdima=\dimen139
+\pgfutil@tempdimb=\dimen140
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box50
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
+))
+Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen141
+\Gin@req@width=\dimen142
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks18
+\pgfkeys@temptoks=\toks19
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks20
+))
+\pgf@x=\dimen143
+\pgf@y=\dimen144
+\pgf@xa=\dimen145
+\pgf@ya=\dimen146
+\pgf@xb=\dimen147
+\pgf@yb=\dimen148
+\pgf@xc=\dimen149
+\pgf@yc=\dimen150
+\pgf@xd=\dimen151
+\pgf@yd=\dimen152
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count194
+\c@pgf@countb=\count195
+\c@pgf@countc=\count196
+\c@pgf@countd=\count197
+\t@pgf@toka=\toks21
+\t@pgf@tokb=\toks22
+\t@pgf@tokc=\toks23
+\pgf@sys@id@count=\count198
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
+))) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfsyssoftpath@smallbuffer@items=\count199
+\pgfsyssoftpath@bigbuffer@items=\count266
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen153
+\pgfmath@count=\count267
+\pgfmath@box=\box51
+\pgfmath@toks=\toks24
+\pgfmath@stack@operand=\toks25
+\pgfmath@stack@operation=\toks26
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count268
+)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@picminx=\dimen154
+\pgf@picmaxx=\dimen155
+\pgf@picminy=\dimen156
+\pgf@picmaxy=\dimen157
+\pgf@pathminx=\dimen158
+\pgf@pathmaxx=\dimen159
+\pgf@pathminy=\dimen160
+\pgf@pathmaxy=\dimen161
+\pgf@xx=\dimen162
+\pgf@xy=\dimen163
+\pgf@yx=\dimen164
+\pgf@yy=\dimen165
+\pgf@zx=\dimen166
+\pgf@zy=\dimen167
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@path@lastx=\dimen168
+\pgf@path@lasty=\dimen169
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@shorten@end@additional=\dimen170
+\pgf@shorten@start@additional=\dimen171
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfpic=\box52
+\pgf@hbox=\box53
+\pgf@layerbox@main=\box54
+\pgf@picture@serial@count=\count269
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgflinewidth=\dimen172
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@pt@x=\dimen173
+\pgf@pt@y=\dimen174
+\pgf@pt@temp=\dimen175
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowsep=\dimen176
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@max=\dimen177
+\pgf@sys@shading@range@num=\count270
+\pgf@shadingcount=\count271
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfexternal@startupbox=\box55
+)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfnodeparttextbox=\box56
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@nodesepstart=\dimen178
+\pgf@nodesepend=\dimen179
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen180
+\pgffor@skip=\dimen181
+\pgffor@stack=\toks27
+\pgffor@toks=\toks28
+)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@plot@mark@count=\count272
+\pgfplotmarksize=\dimen182
+)
+\tikz@lastx=\dimen183
+\tikz@lasty=\dimen184
+\tikz@lastxsaved=\dimen185
+\tikz@lastysaved=\dimen186
+\tikz@lastmovetox=\dimen187
+\tikz@lastmovetoy=\dimen188
+\tikzleveldistance=\dimen189
+\tikzsiblingdistance=\dimen190
+\tikz@figbox=\box57
+\tikz@figbox@bg=\box58
+\tikz@tempbox=\box59
+\tikz@tempbox@bg=\box60
+\tikztreelevel=\count273
+\tikznumberofchildren=\count274
+\tikznumberofcurrentchild=\count275
+\tikz@fig@count=\count276
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfmatrixcurrentrow=\count277
+\pgfmatrixcurrentcolumn=\count278
+\pgf@matrix@numberofcolumns=\count279
+)
+\tikz@expandcount=\count280
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))) (/usr/local/texlive/2022/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks29
+\inpenc@posthook=\toks30
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks31
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks32
+\ex@=\dimen191
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen192
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count281
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count282
+\leftroot@=\count283
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count284
+\DOTSCASE@=\count285
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box61
+\strutbox@=\box62
+\big@size=\dimen193
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count286
+\c@MaxMatrixCols=\count287
+\dotsspace@=\muskip16
+\c@parentequation=\count288
+\dspbrk@lvl=\count289
+\tag@help=\toks33
+\row@=\count290
+\column@=\count291
+\maxfields@=\count292
+\andhelp@=\toks34
+\eqnshift@=\dimen194
+\alignsep@=\dimen195
+\tagshift@=\dimen196
+\tagwidth@=\dimen197
+\totwidth@=\dimen198
+\lineht@=\dimen199
+\@envbody=\toks35
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks36
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count293
+\float@exts=\toks37
+\float@box=\box63
+\@float@everytoks=\toks38
+\@floatcapt=\box64
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip52
+\subfigcapskip=\skip53
+\subfigcaptopadj=\dimen256
+\subfigbottomskip=\skip54
+\subfigcapmargin=\dimen257
+\subfiglabelskip=\skip55
+\c@subfigure=\count294
+\c@lofdepth=\count295
+\c@subtable=\count296
+\c@lotdepth=\count297
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2022/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip56
+\subfig@bottom=\skip57
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count298
+\Gm@cntv=\count299
+\c@Gm@tempcnt=\count300
+\Gm@bindingoffset=\dimen258
+\Gm@wd@mp=\dimen259
+\Gm@odd@mp=\dimen260
+\Gm@even@mp=\dimen261
+\Gm@layoutwidth=\dimen262
+\Gm@layoutheight=\dimen263
+\Gm@layouthoffset=\dimen264
+\Gm@layoutvoffset=\dimen265
+\Gm@dimlist=\toks39
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/minted/minted.sty
+Package: minted 2021/12/24 v2.6 Yet another Pygments shim for LaTeX
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/fvextra/fvextra.sty
+Package: fvextra 2019/02/04 v1.4 fvextra - extensions and patches for fancyvrb
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count301
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2021/12/21 4.1b verbatim text (tvz,hv)
+\FV@CodeLineNo=\count302
+\FV@InFile=\read3
+\FV@TabBox=\box65
+\c@FancyVerbLine=\count303
+\FV@StepNumber=\count304
+\FV@OutFile=\write4
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count305
+\output=\toks40
+\linenoprevgraf=\count306
+\linenumbersep=\dimen266
+\linenumberwidth=\dimen267
+\c@linenumber=\count307
+\c@pagewiselinenumber=\count308
+\c@LN@truepage=\count309
+\c@internallinenumber=\count310
+\c@internallinenumbers=\count311
+\quotelinenumbersep=\dimen268
+\bframerule=\dimen269
+\bframesep=\dimen270
+\bframebox=\box66
+LaTeX Info: Redefining \\ on input line 3056.
+)
+\c@FV@TrueTabGroupLevel=\count312
+\c@FV@TrueTabCounter=\count313
+\FV@TabBox@Group=\box67
+\FV@TmpLength=\skip58
+\c@FV@HighlightLinesStart=\count314
+\c@FV@HighlightLinesStop=\count315
+\FV@LoopCount=\count316
+\FV@NCharsBox=\box68
+\FV@BreakIndent=\dimen271
+\FV@BreakIndentNChars=\count317
+\FV@BreakSymbolSepLeft=\dimen272
+\FV@BreakSymbolSepLeftNChars=\count318
+\FV@BreakSymbolSepRight=\dimen273
+\FV@BreakSymbolSepRightNChars=\count319
+\FV@BreakSymbolIndentLeft=\dimen274
+\FV@BreakSymbolIndentLeftNChars=\count320
+\FV@BreakSymbolIndentRight=\dimen275
+\FV@BreakSymbolIndentRightNChars=\count321
+\c@FancyVerbLineBreakLast=\count322
+\FV@LineBox=\box69
+\FV@LineIndentBox=\box70
+\FV@LineWidth=\dimen276
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count323
+\calc@Bcount=\count324
+\calc@Adimen=\dimen277
+\calc@Bdimen=\dimen278
+\calc@Askip=\skip59
+\calc@Bskip=\skip60
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count325
+\calc@Cskip=\skip61
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/catchfile/catchfile.sty
+Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)) (/usr/local/texlive/2022/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)
+runsystem(uname -s > "library.w18")...executed.
+
+ (./library.w18)
+runsystem(rm -- "library.w18")...executed.
+
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.sty (/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.tex
+\integerpart=\count326
+\decimalpart=\count327
+)
+Package: xstring 2021/07/21 v1.84 String manipulations (CT)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip62
+\fb@frw=\dimen279
+\fb@frh=\dimen280
+\FrameRule=\dimen281
+\FrameSep=\dimen282
+)
+\minted@appexistsfile=\read4
+\minted@bgbox=\box71
+\minted@code=\write5
+\c@minted@FancyVerbLineTemp=\count328
+\c@minted@pygmentizecounter=\count329
+\@float@every@listing=\toks41
+\c@listing=\count330
+)
+runsystem(mkdir -p _minted-library)...executed.
+
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/spverbatim/spverbatim.sty
+Package: spverbatim 2009/08/10 v1.0 Verbatim with breakable spaces
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip63
+\enit@outerparindent=\dimen283
+\enit@toks=\toks42
+\enit@inbox=\box72
+\enit@count@id=\count331
+\enitdp@description=\count332
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/lipsum/lipsum.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2022-02-24 L3 programming layer (loader) 
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count333
+\l__pdf_internal_box=\box73
+))
+Package: l3keys2e 2022-01-12 LaTeX2e option processing using LaTeX3 keys
+)
+Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
+\g__lipsum_par_int=\count334
+\l__lipsum_a_int=\count335
+\l__lipsum_b_int=\count336
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
+runsystem(which pygmentize && touch library.aex)...executed.
+
+runsystem(rm library.aex)...executed.
+
+ (./library.aux)
+\openout1 = `library.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+ (/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count337
+\scratchdimen=\dimen284
+\scratchbox=\box74
+\nofMPsegments=\count338
+\nofMParguments=\count339
+\everyMPshowfont=\toks43
+\MPscratchCnt=\count340
+\MPscratchDim=\dimen285
+\MPnumerator=\count341
+\makeMPintoPDFobject=\count342
+\everyMPtoPDFconversion=\toks44
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(108.405pt, 397.485pt, 108.405pt)
+* v-part:(T,H,B)=(108.405pt, 578.15999pt, 108.405pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=397.485pt
+* \textheight=578.15999pt
+* \oddsidemargin=36.13501pt
+* \evensidemargin=36.13501pt
+* \topmargin=4.26122pt
+* \headheight=12.0pt
+* \headsep=19.8738pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=98.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+<images//cross.png, id=4, 746.79pt x 1055.945pt>
+File: images//cross.png Graphic file (type png)
+<use images//cross.png>
+Package pdftex.def Info: images//cross.png  used on input line 36.
+(pdftex.def)             Requested size: 614.32031pt x 794.96983pt.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 36.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+
+{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./images//cross.png>]
+<images//Thoth.png, id=14, 602.25pt x 602.25pt>
+File: images//Thoth.png Graphic file (type png)
+<use images//Thoth.png>
+Package pdftex.def Info: images//Thoth.png  used on input line 38.
+(pdftex.def)             Requested size: 602.24852pt x 602.24852pt.
+
+Overfull \hbox (204.76352pt too wide) in paragraph at lines 38--40
+[][]
+ []
+
+
+LaTeX Warning: Float too large for page by 82.08853pt on input line 40.
+
+[2 <./images//Thoth.png>] (./library.toc [3
+
+] [4] [5] [6] [7])
+\tf@toc=\write6
+\openout6 = `library.toc'.
+
+ [8]
+Chapter 1.
+\openout4 = `library.pyg'.
+
+(./_minted-library/default.pygstyle) (./_minted-library/D08D9F65D11179019DE5B9B42AFA6D89E59C98715317D03782CE1DA429249959.pygtex
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 4.
+)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/B116D5CFF179CDEBAE3AA0C0CD633785E59C98715317D03782CE1DA429249959.pygtex [9
+
+])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/74AD056EEE6AAAD589362E5073441A93E59C98715317D03782CE1DA429249959.pygtex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10])
+Overfull \hbox (7.2088pt too wide) in paragraph at lines 134--134
+[]\OT1/cmr/bx/n/17.28 Longest In-creas-ing Sub-se-quence (It-er-a-tive)
+ []
+
+\openout4 = `library.pyg'.
+
+(./_minted-library/BBE0F7C1D24E6DCE5CA528011CFE230DE59C98715317D03782CE1DA429249959.pygtex [11])
+Overfull \hbox (7.2088pt too wide) in paragraph at lines 166--166
+[]\OT1/cmr/bx/n/17.28 Longest In-creas-ing Sub-se-quence (It-er-a-tive)
+ []
+
+\openout4 = `library.pyg'.
+
+(./_minted-library/28FF5E73CD1329419BFA3743B3EAC31AE59C98715317D03782CE1DA429249959.pygtex [12])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (18.60857pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 1.5.  LONGEST INCREASING SUBSEQUENCE (ITERATIVE) $\OML/cmm/m/it/12 O\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 N [] K\OT1/cmr/m/n/12 )$ 13
+ []
+
+[13]
+\openout4 = `library.pyg'.
+
+ (./_minted-library/5C5365F5DBD0457EEB56ADD19F2BD1A0E59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/0689F50A0A1B501F7CFC1D9B510725FEE59C98715317D03782CE1DA429249959.pygtex [14])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/4909C3A7F1DBCD7809A85A3AADD94FE9E59C98715317D03782CE1DA429249959.pygtex [15])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/8FEFC08A23F5832B964384763109905FE59C98715317D03782CE1DA429249959.pygtex [16])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
+\openout4 = `library.pyg'.
+
+ (./_minted-library/EBE6AE903518AE3E7A0701D75D8DAAEEE59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/7404173669A5E739CB9D3930808DFCCFE59C98715317D03782CE1DA429249959.pygtex [18] [19])
+Overfull \hbox (18.2498pt too wide) in paragraph at lines 429--429
+[]\OT1/cmr/bx/n/17.28 Counting Coin Change (Fixed-size) $\OML/cmm/m/it/17.28 O\OT1/cmr/m/n/17.28 (\OML/cmm/m/it/17.28 nKS\OT1/cmr/m/n/17.28 )$ 
+ []
+
+\openout4 = `library.pyg'.
+
+(./_minted-library/34871266287D404FBE3863D385FF9077E59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/FBC8A18BC803B2F366716AC309044FC1E59C98715317D03782CE1DA429249959.pygtex [20])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/8360C6DDEDDE78C9AE58FA9A037FC838E59C98715317D03782CE1DA429249959.pygtex [21])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/A25EEB09DBF1C5DB6B787BF6C4FC5411E59C98715317D03782CE1DA429249959.pygtex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22]
+Underfull \vbox (badness 2512) has occurred while \output is active []
+
+ [23])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/F0371FA36F0CB45B302F83B7990E336CE59C98715317D03782CE1DA429249959.pygtex [24])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/60EC282E91B2D15BB2C9C8EA77B41A6DE59C98715317D03782CE1DA429249959.pygtex [25])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/20E24999CB139C99A7272E7BB0C990EAE59C98715317D03782CE1DA429249959.pygtex [26])
+Overfull \hbox (6.75699pt too wide) in paragraph at lines 706--706
+[]\OT1/cmr/bx/n/17.28 Bitonic Trav-el-ing Sales-man Prob-lem $\OML/cmm/m/it/17.28 O\OT1/cmr/m/n/17.28 (\OML/cmm/m/it/17.28 n[]\OT1/cmr/m/n/17.28 )$ 
+ []
+
+\openout4 = `library.pyg'.
+
+(./_minted-library/162A2C39426BCFE28118AAA6691098F7E59C98715317D03782CE1DA429249959.pygtex [27])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/449D0EDE6E0A0A109204F92FC1C817D0E59C98715317D03782CE1DA429249959.pygtex [28]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [29])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30] [31] [32]
+Chapter 2.
+\openout4 = `library.pyg'.
+
+(./_minted-library/0C2EA3488FB610D6E9B1E834F03A4E92E59C98715317D03782CE1DA429249959.pygtex
+Underfull \vbox (badness 1019) has occurred while \output is active []
+
+ [33
+
+])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/D8231264A89A880DF5269E616EE9A67FE59C98715317D03782CE1DA429249959.pygtex [34])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/C6D06C200AA476C5F17A356712B8C03EE59C98715317D03782CE1DA429249959.pygtex [35]) [36] [37] [38]
+Chapter 3.
+\openout4 = `library.pyg'.
+
+(./_minted-library/A979A8D6603A74A715D4058E6EE17B00E59C98715317D03782CE1DA429249959.pygtex
+Underfull \vbox (badness 1005) has occurred while \output is active []
+
+ [39
+
+])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/9DA14371D72DEC5C956BE867E25D1E75E59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/B699144CFECE4A862D4A42F6CDFDD2A6E59C98715317D03782CE1DA429249959.pygtex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [40])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/A75E478F6C7DB494A313B83D1E2DAB3FE59C98715317D03782CE1DA429249959.pygtex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [41])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/1BC1FD3D8D16F3B741B6EED7CB1C45E3E59C98715317D03782CE1DA429249959.pygtex [42])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/756532A0D887489BAFC61374E2A13A44E59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/23990996114A8A46C4C67F8D99D48B6DE59C98715317D03782CE1DA429249959.pygtex [43])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/D2714A2CC1158DBA1D0CC398CB9E4C97E59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/602870FAA986653A6094FC465936F53EE59C98715317D03782CE1DA429249959.pygtex [44]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [45])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [46] [47] [48
+
+]
+Chapter 4.
+\openout4 = `library.pyg'.
+
+(./_minted-library/BC7710F0DB7FE11384F1E40AEFF5980CE59C98715317D03782CE1DA429249959.pygtex [49])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/03338CAE50F4C98CED08E0CEB0F83369E59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/DCBA772E4400F0CAF29B60BFBB5AC613E59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/B893A4C4610FAC6621E220BDEEB9F40EE59C98715317D03782CE1DA429249959.pygtex [50])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/6354F6A7BC7DE98D0345205673EEFA70E59C98715317D03782CE1DA429249959.pygtex [51])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/E2EDB6C8BB68D46D5809FF954F9DDDF2E59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/E3E563ED5B9C421D58D3E8BECFB8E413E59C98715317D03782CE1DA429249959.pygtex [52]) [53] [54
+
+]
+Chapter 5.
+\openout4 = `library.pyg'.
+
+(./_minted-library/0332453F72DEE3D823470DE3180BC941E59C98715317D03782CE1DA429249959.pygtex [55])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/41EBC6A6C332B3E5132D8D54BA7AA664E59C98715317D03782CE1DA429249959.pygtex [56])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/EB9E5CD416E3728727E06B1B9AE9CFA2E59C98715317D03782CE1DA429249959.pygtex [57])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/424A2CE0D32311288DE6152841D8B862E59C98715317D03782CE1DA429249959.pygtex [58])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/D41D8CD98F00B204E9800998ECF8427EE59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/F96716EE80389EC76DC2B2DB54CF6E85E59C98715317D03782CE1DA429249959.pygtex) [59] [60]
+Chapter 6.
+\openout4 = `library.pyg'.
+
+(./_minted-library/29E49AF917A4BF329FEC7C3FBBA9B2EFE59C98715317D03782CE1DA429249959.pygtex
+Underfull \vbox (badness 1019) has occurred while \output is active []
+
+ [61
+
+])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/1C4427137F5FC2C4FCF8342C04FE59FAE59C98715317D03782CE1DA429249959.pygtex [62])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/1F2FB54FD77493D2EE5031FB43FE94F4E59C98715317D03782CE1DA429249959.pygtex [63])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/FF8859DC274D5AEFFAC33F1D6CA64B94E59C98715317D03782CE1DA429249959.pygtex [64])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/2649C553259503D8CADA96B4E571DD10E59C98715317D03782CE1DA429249959.pygtex [65])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/99FE74FBB2F5A148658EC606FC918E1FE59C98715317D03782CE1DA429249959.pygtex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [66])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/A07EAFEC0CED1DFA4591E2FE32B41B30E59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/8B96AFD9A70A6A2422443066A3803CE5E59C98715317D03782CE1DA429249959.pygtex [67]) [68]
+Chapter 7.
+\openout4 = `library.pyg'.
+
+(./_minted-library/04EE5AE997D4B8580CF19FD85239013BE59C98715317D03782CE1DA429249959.pygtex
+Underfull \vbox (badness 1019) has occurred while \output is active []
+
+ [69
+
+])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/992393211ABDEBEFE009F1B0170BD367E59C98715317D03782CE1DA429249959.pygtex [70]) [71] [72
+
+]
+Chapter 8.
+\openout4 = `library.pyg'.
+
+(./_minted-library/10F4369C72A93D1D698436771C537254E59C98715317D03782CE1DA429249959.pygtex [73]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [74])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/06D817124B02C465F8E551A8B670DDC6E59C98715317D03782CE1DA429249959.pygtex [75]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [76])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/BEE8857C35F3797C6ED64863377CB918E59C98715317D03782CE1DA429249959.pygtex)
+Overfull \hbox (6.4378pt too wide) in paragraph at lines 2382--2382
+[]\OT1/cmr/bx/n/17.28 Strongly Con-nected Components$[]$ $\OML/cmm/m/it/17.28 O\OT1/cmr/m/n/17.28 (\OML/cmm/m/it/17.28 E\OT1/cmr/m/n/17.28 )$ 
+ []
+
+\openout4 = `library.pyg'.
+
+(./_minted-library/AD0A00440AA28EF7F410183E4247CDA5E59C98715317D03782CE1DA429249959.pygtex [77]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [78])
+Overfull \hbox (29.56038pt too wide) in paragraph at lines 2428--2428
+[]\OT1/cmr/bx/n/17.28 Strongly-Connected Components$[]$, $\OML/cmm/m/it/17.28 O\OT1/cmr/m/n/17.28 (\OML/cmm/m/it/17.28 E\OT1/cmr/m/n/17.28 )$ 
+ []
+
+\openout4 = `library.pyg'.
+
+(./_minted-library/1C0DCFF204E625B452A452E36456E928E59C98715317D03782CE1DA429249959.pygtex [79]) [80] [81] [82
+
+]
+Chapter 9.
+\openout4 = `library.pyg'.
+
+(./_minted-library/317B05CB72EA8597D475F750ACDF73B4E59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/6B59EC5B1B99BE4B6146C2980F2C12FAE59C98715317D03782CE1DA429249959.pygtex [83])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/282C2CBAE9C8D7AF3202E62B494F01B0E59C98715317D03782CE1DA429249959.pygtex [84])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/8D0A1A9D5CC3CE4B583B44CA1836848DE59C98715317D03782CE1DA429249959.pygtex [85]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [86])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/19BCF3644ECB053D657601E0A6338D17E59C98715317D03782CE1DA429249959.pygtex [87]) [88]
+Chapter 10.
+\openout4 = `library.pyg'.
+
+(./_minted-library/B3B6251E0831725DC4BB4185C9D0466FE59C98715317D03782CE1DA429249959.pygtex
+Underfull \vbox (badness 1014) has occurred while \output is active []
+
+ [89
+
+])
+Overfull \hbox (17.65384pt too wide) in paragraph at lines 2797--2797
+[]\OT1/cmr/bx/n/17.28 Maximum Flow (DFS) with Scal-ing $\OML/cmm/m/it/17.28 O\OT1/cmr/m/n/17.28 (\OML/cmm/m/it/17.28 VE\OT1/cmr/m/n/17.28 ) \OMS/cmsy/m/n/17.28 ^^C
+ []
+
+\openout4 = `library.pyg'.
+
+(./_minted-library/862A30F08BFB3915520DF019C5C37175E59C98715317D03782CE1DA429249959.pygtex [90])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/63A6DE3076591951B9FCC272E24F3D75E59C98715317D03782CE1DA429249959.pygtex
+Overfull \hbox (17.48402pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 10.3.  MAXIMUM FLOW (BFS) WITH RESIDUE MATRIX $\OML/cmm/m/it/12 O\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 VE\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^C \OML/cmm/m/it/12 O\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E[]\OT1/cmr/m/n/12 )$ 91
+ []
+
+[91])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/84160A2F3E4F81DC4A3660B8C36DF7A1E59C98715317D03782CE1DA429249959.pygtex [92]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [93])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/E1A12245EFC9824220A67915BF368563E59C98715317D03782CE1DA429249959.pygtex [94]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [95]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [96])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/3D02CD59AC3D28AE79F53C2A6A53A986E59C98715317D03782CE1DA429249959.pygtex [97]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [98]) [99]
+Overfull \hbox (107.36493pt too wide) in paragraph at lines 3161--3161
+ []\OT1/cmtt/m/n/12 #define idx(a, b) ((a) * m + (b)) // assign a label to a vertex in a 2-D grid[] 
+ []
+
+[100]
+Chapter 11.
+\openout4 = `library.pyg'.
+
+(./_minted-library/F802D9943BEBBF53919073AD72153A2DE59C98715317D03782CE1DA429249959.pygtex
+Underfull \vbox (badness 1014) has occurred while \output is active []
+
+ [101
+
+])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/EA11149AFBA3625E549BE63180624C09E59C98715317D03782CE1DA429249959.pygtex [102])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [103]
+\openout4 = `library.pyg'.
+
+ (./_minted-library/4D1AB560EBF5C7E9664141F55B4DC728E59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/634679756E72CA40C909F764A25B29B5E59C98715317D03782CE1DA429249959.pygtex [104]) [105] [106] [107] [108
+
+]
+Chapter 12.
+\openout4 = `library.pyg'.
+
+(./_minted-library/A524AA772331363EE71E5801E7711C34E59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/66ED121324A69DD74E1EBCD3392D2C76E59C98715317D03782CE1DA429249959.pygtex [109])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/0F24455828AF596DB2349D8A9E9D7355E59C98715317D03782CE1DA429249959.pygtex [110])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/6B0C69A4178A3B441B573D3934CCE5C9E59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/19F1A1FB2DC841CC0D93AA3CF53892FFE59C98715317D03782CE1DA429249959.pygtex [111])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/A4A488D4636EB2637A0C8A71C3B025CBE59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/AAE3EBFBC6E3549B73911C72BFB6A74FE59C98715317D03782CE1DA429249959.pygtex [112]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [113])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/5A0A1F3F2E0DCD443E419962BA54DC0CE59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/8C7DB9472B70373D96106A4FB78F8B99E59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/E35464BF4A96A808F1328FAD21F50938E59C98715317D03782CE1DA429249959.pygtex [114])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/5AB35CC50CF0498E91EE6412FA2DE572E59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/7AF3F8D76456751668E6953F949B1945E59C98715317D03782CE1DA429249959.pygtex [115])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/B87D8A40FD2FCE82C800DAA2779512D8E59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/E23D015D3501DA9DAE2905E0F25168C6E59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/8D45937D98FBBA24AD2CF2373E70C8C5E59C98715317D03782CE1DA429249959.pygtex [116])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/B944E92A91FBBB22804DC3E5BC452F20E59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/F8F45C9E16D18060C68D781A23CA0650E59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/F8655D004E884BE978346AA1E951226EE59C98715317D03782CE1DA429249959.pygtex
+Underfull \vbox (badness 1062) has occurred while \output is active []
+
+ [117])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/EBFE8B600AA60A3A65EE6991272A3D59E59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/5D85FEA55927A5D3C72E674AAF9A6C76E59C98715317D03782CE1DA429249959.pygtex)
+Overfull \hbox (12.25935pt too wide) in paragraph at lines 3792--3793
+[]\OT1/cmr/m/n/12 Some large primes are: $104729$, $1299709$, $15485863$, $179424673$, $2147483647$,
+ []
+
+[118]
+Overfull \hbox (44.67998pt too wide) in paragraph at lines 3829--3830
+[]\OT1/cmr/m/n/12 Number of dig-its in dec-i-mal rep-re-sen-ta-tion of $\OML/cmm/m/it/12 x$ \OT1/cmr/m/n/12 is $(\OML/cmm/m/it/12 int\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 floor\OT1/cmr/m/n/12 (1 + \OML/cmm/m/it/12 log\OT1/cmr/m/n/12 10((\OML/cmm/m/it/12 double\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ));$ 
+ []
+
+[119] [120
+
+]
+Chapter 13.
+\openout4 = `library.pyg'.
+
+(./_minted-library/A09A6DD4FB90FACCD2F675C5C9A437490267084E83FCC85449AD9FF1696D4D70.pygtex [121])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/66F25E11BFACB223C3BFDA23E09F9FFDE59C98715317D03782CE1DA429249959.pygtex)
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 3920.
+
+
+Underfull \vbox (badness 1708) has occurred while \output is active []
+
+ [122]
+Overfull \hbox (2.23724pt too wide) in paragraph at lines 3924--3925
+[]\OT1/cmr/m/n/12 Expressions con-tain-ing n pairs of paren-the-ses which are cor-rectly matched 
+ []
+
+\openout4 = `library.pyg'.
+
+(./_minted-library/54DD9D6C0CD6FA32C4B61F5A878B8A09E59C98715317D03782CE1DA429249959.pygtex [123])
+Overfull \hbox (79.86298pt too wide) detected at line 3949
+[]
+ []
+
+\openout4 = `library.pyg'.
+
+(./_minted-library/423563000DBA97904F73BE671909019CE59C98715317D03782CE1DA429249959.pygtex) [124]
+\openout4 = `library.pyg'.
+
+ (./_minted-library/A1FA7D390CDB456EFACF37B771B1F21BE59C98715317D03782CE1DA429249959.pygtex [125])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/1486244E00CBEB1D7B490EB7B89D667D0267084E83FCC85449AD9FF1696D4D70.pygtex [126]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [127])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/8F58DB4BF4ADCB2EF0C3F9F1B0246D520267084E83FCC85449AD9FF1696D4D70.pygtex [128]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [129]) [130] [131] [132
+
+]
+Chapter 14.
+\openout4 = `library.pyg'.
+
+(./_minted-library/B1F98C6066BEE294ECDF02AC59C232EA4034FAD9ABB1CC825A348110F1F48F29.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/F3E2D3084DD1FB27118C4A9EFC7916E9E59C98715317D03782CE1DA429249959.pygtex [133])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/A839A9962D6335A2A76D3BF2E22262E5E59C98715317D03782CE1DA429249959.pygtex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [134])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/87D6D7182ABE905C940983C09552F0CAE59C98715317D03782CE1DA429249959.pygtex [135]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [136])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/89A28D93713E4E9DA5AEFB50B132287BE59C98715317D03782CE1DA429249959.pygtex [137]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [138]) [139] [140
+
+]
+Chapter 15.
+\openout4 = `library.pyg'.
+
+(./_minted-library/5B809A81FA5957896A8C09B6AA046052E59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/10316227D9B58B793774573C0C61BF71E59C98715317D03782CE1DA429249959.pygtex) [141]
+Overfull \hbox (0.20535pt too wide) in paragraph at lines 4518--4519
+[]\OT1/cmr/m/n/12 Dynamic Pro-gram-ming (Build-ing Ta-ble, or Re-cur-sive Back-track-ing) with
+ []
+
+[142]
+Chapter 16.
+\openout4 = `library.pyg'.
+
+(./_minted-library/BBB44629D65D46D2541C18BC9AA6C0E1E59C98715317D03782CE1DA429249959.pygtex [143
+
+])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/A8E4BDC83ED6AE643F9BE0C8F2A4FF7EE59C98715317D03782CE1DA429249959.pygtex [144]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [145])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/AABC5C0AD2D502BAF6AAE35C6A7E531FE59C98715317D03782CE1DA429249959.pygtex [146])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/205250BC84C33EFE5A055975DD78E0C0E59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/22F28D3C4787C80C12D3EF31F692A1A2E59C98715317D03782CE1DA429249959.pygtex [147])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/6A0310783C1C4D57827D73E85E48E275E59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/8601BBAAB2B827B8CA7445C4E37FF037E59C98715317D03782CE1DA429249959.pygtex [148])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/791322654124BC61091B99A3A5160303E59C98715317D03782CE1DA429249959.pygtex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [149])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/6C71B37EFB8D03004A31B071DC19AD09E59C98715317D03782CE1DA429249959.pygtex [150])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/848ADBE085A305C6F0858DAF31565A5EE59C98715317D03782CE1DA429249959.pygtex [151]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [152]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [153])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/29CC0D61647FB336589F0911B6868910E59C98715317D03782CE1DA429249959.pygtex [154])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/52C01B8473755CD863366DCA3C58D458E59C98715317D03782CE1DA429249959.pygtex [155])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/84015300543AC0884A1477DB46B83D68FC86BC10738CE4C3B61EEFD46FAAF009.pygtex [156])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/85ED2FEE057F9E9677D65E8B0C340623E59C98715317D03782CE1DA429249959.pygtex [157])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/7D9A73B5240844530861DAF77F4BD308E59C98715317D03782CE1DA429249959.pygtex [158]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [159]) [160]
+Chapter 17.
+\openout4 = `library.pyg'.
+
+(./_minted-library/9FD16F150DC233244A56E92043AC0B0BE59C98715317D03782CE1DA429249959.pygtex
+Underfull \vbox (badness 1308) has occurred while \output is active []
+
+ [161
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [162]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [163]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [164]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [165])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/DA98889FCFE4A0C1740E0250620D90D4E59C98715317D03782CE1DA429249959.pygtex [166]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [167])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/903806B32CBFA978408C60ECD4ECEDDFE59C98715317D03782CE1DA429249959.pygtex [168]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [169]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [170])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/E87638CEE081F9E7584DD1F5F17F5DFAE59C98715317D03782CE1DA429249959.pygtex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [171])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/36B3BCB7F51CEB2F398DA5C007C135F0E59C98715317D03782CE1DA429249959.pygtex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [172] [173]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [174]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [175])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/CD8416E7750AA12496447E801D597060E59C98715317D03782CE1DA429249959.pygtex [176])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/1324D60D187BB4F0CBD9ACC8F85902E7E59C98715317D03782CE1DA429249959.pygtex [177]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [178])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/9ABC2D7B4255D5658256A7563630368AE59C98715317D03782CE1DA429249959.pygtex [179])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/2A6835E7E913BAE33A7E15E0572A0567E59C98715317D03782CE1DA429249959.pygtex)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [180] [181] [182
+
+]
+Chapter 18.
+\openout4 = `library.pyg'.
+
+(./_minted-library/C894B5CF216E03AB708CBC1B600F2D2DE59C98715317D03782CE1DA429249959.pygtex
+Underfull \vbox (badness 1308) has occurred while \output is active []
+
+ [183])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/A0370420AF23E0F07C7A54F5BDCB444EE59C98715317D03782CE1DA429249959.pygtex [184]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [185])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/163EADEC0E113FF685C1A8AD36506AADE59C98715317D03782CE1DA429249959.pygtex [186])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/47D536AFA81F0EB8405489C6B14F8714E59C98715317D03782CE1DA429249959.pygtex [187]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [188]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [189])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/0103B8C039FDCD09DFF23BE7A33FF66EE59C98715317D03782CE1DA429249959.pygtex [190]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [191]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [192]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [193])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/041689CFF267ED051EF88DE3AFF0313FE59C98715317D03782CE1DA429249959.pygtex [194]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [195]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [196]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [197])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/99FEB946814F5F7EDE243360C8684B5AE59C98715317D03782CE1DA429249959.pygtex [198])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/90538E654C12AC953B945CF452112655E59C98715317D03782CE1DA429249959.pygtex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [199]
+Underfull \vbox (badness 2042) has occurred while \output is active []
+
+ [200])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/9A24D7B7D1D0F65A4A7B6B12A42BF6D8E59C98715317D03782CE1DA429249959.pygtex [201])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/05825B0111F3D366CA55657D535A4720E59C98715317D03782CE1DA429249959.pygtex [202]) [203] [204]
+Chapter 19.
+\openout4 = `library.pyg'.
+
+(./_minted-library/28AB4707101A1C9E4198C69D984B2A4CE59C98715317D03782CE1DA429249959.pygtex)
+\openout4 = `library.pyg'.
+
+ (./_minted-library/CBE84E42A7D51CB2D264B9F7E7506CA9E790A5F5E78B4DF23181FED96B39E828.pygtex [205
+
+])
+\openout4 = `library.pyg'.
+
+ (./_minted-library/966717A34B465906F061DAC0F360552AE59C98715317D03782CE1DA429249959.pygtex [206]) [207] [208]
+Overfull \hbox (7.85103pt too wide) in paragraph at lines 7076--7077
+[]\OT1/cmr/m/n/12 Read the prob-lem state-ment care-fully, high-light the im-por-tant points,
+ []
+
+[209] [210] [211] (./library.aux)
+runsystem(rm library.pyg)...executed.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 19446 strings out of 478268
+ 450790 string characters out of 5846347
+ 807741 words of memory out of 5000000
+ 36853 multiletter control sequences out of 15000+600000
+ 481556 words of font info for 76 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 100i,10n,104p,779b,716s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on library.pdf (211 pages, 728113 bytes).
+PDF statistics:
+ 783 PDF objects out of 1000 (max. 8388607)
+ 524 compressed objects within 6 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+

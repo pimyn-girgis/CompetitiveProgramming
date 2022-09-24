@@ -1,0 +1,47 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+c1}{// This version of Bellman\PYGZhy{}Ford is slightly more efficient than Steven\PYGZsq{}s}
+\PYG{c+cp}{\PYGZsh{}define MAX 101}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{n}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{m}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{dis}\PYG{p}{[}\PYG{n}{MAX}\PYG{p}{];}
+\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{pair}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{adj}\PYG{p}{;}
+\PYG{c+cm}{/* If you get stuck having to use a vector, it\PYGZsq{}s a good}
+\PYG{c+cm}{idea to resize(), assign() or reserve() to improve performance */}
+\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{inQ}\PYG{p}{[}\PYG{n}{MAX}\PYG{p}{];}
+
+\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n+nf}{bell}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{src}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{memset}\PYG{p}{(}\PYG{n}{dis}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mh}{0x3F}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{sizeof}\PYG{p}{(}\PYG{n}{dis}\PYG{p}{));}
+\PYG{+w}{    }\PYG{n}{dis}\PYG{p}{[}\PYG{n}{src}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{queue}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{Q}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{Q}\PYG{p}{.}\PYG{n}{push}\PYG{p}{(}\PYG{n}{src}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{inQ}\PYG{p}{[}\PYG{n}{src}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{n}\PYG{p}{;}\PYG{+w}{ }\PYG{o}{++}\PYG{n}{i}\PYG{p}{)}
+\PYG{+w}{    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{s}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Q}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();}
+\PYG{+w}{        }\PYG{k}{while}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{s}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{p}{)}
+\PYG{+w}{        }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{node}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Q}\PYG{p}{.}\PYG{n}{front}\PYG{p}{();}
+\PYG{+w}{            }\PYG{n}{Q}\PYG{p}{.}\PYG{n}{pop}\PYG{p}{();}
+\PYG{+w}{            }\PYG{n}{inQ}\PYG{p}{[}\PYG{n}{node}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{            }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{k}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{k}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{adj}\PYG{p}{[}\PYG{n}{node}\PYG{p}{].}\PYG{n}{size}\PYG{p}{();}\PYG{+w}{ }\PYG{o}{++}\PYG{n}{k}\PYG{p}{)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{adj}\PYG{p}{[}\PYG{n}{node}\PYG{p}{][}\PYG{n}{k}\PYG{p}{].}\PYG{n}{first}\PYG{p}{;}
+\PYG{+w}{                }\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{c}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{adj}\PYG{p}{[}\PYG{n}{node}\PYG{p}{][}\PYG{n}{k}\PYG{p}{].}\PYG{n}{second}\PYG{p}{;}
+\PYG{+w}{                }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{dis}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{dis}\PYG{p}{[}\PYG{n}{node}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{)}
+\PYG{+w}{                }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                    }\PYG{n}{dis}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{dis}\PYG{p}{[}\PYG{n}{node}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{;}
+\PYG{+w}{                    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{!}\PYG{n}{inQ}\PYG{p}{[}\PYG{n}{j}\PYG{p}{])}
+\PYG{+w}{                    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                        }\PYG{n}{Q}\PYG{p}{.}\PYG{n}{push}\PYG{p}{(}\PYG{n}{j}\PYG{p}{);}
+\PYG{+w}{                        }\PYG{n}{inQ}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{+w}{                    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{                }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{Q}\PYG{p}{.}\PYG{n}{empty}\PYG{p}{())}
+\PYG{+w}{        }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        		}\PYG{c+c1}{// no negative cycles}
+\PYG{+w}{            }\PYG{k}{return}\PYG{+w}{ }\PYG{n+nb}{false}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{k}{return}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,177 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+cm}{/*}
+\PYG{c+cm}{ * An OO implementation of a range\PYGZhy{}maximum\PYGZhy{}query segment tree with}
+\PYG{c+cm}{ * lazy propagation.}
+\PYG{c+cm}{ * Queries are:}
+\PYG{c+cm}{ * \PYGZhy{} set elements in range i to j to max(cur\PYGZus{}val, val)}
+\PYG{c+cm}{ * \PYGZhy{} get maximum element in range i to j}
+\PYG{c+cm}{ * Range update and range query are O(log n)}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ * NOTE: It might be a better idea to store the index, rather than}
+\PYG{c+cm}{ * the value of the maximum element.}
+\PYG{c+cm}{ */}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}bits/stdc++.h\PYGZgt{}}
+\PYG{k}{using}\PYG{+w}{ }\PYG{k}{namespace}\PYG{+w}{ }\PYG{n+nn}{std}\PYG{p}{;}
+\PYG{c+cp}{\PYGZsh{}define left(s) ((s) \PYGZlt{}\PYGZlt{} 1)}
+\PYG{c+cp}{\PYGZsh{}define right(s) (left(s) + 1)}
+\PYG{c+cp}{\PYGZsh{}define avg(a, b) (((a) + (b)) \PYGZgt{}\PYGZgt{} 1)}
+
+\PYG{k}{class}\PYG{+w}{ }\PYG{n+nc}{segment\PYGZus{}tree}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{public}\PYG{o}{:}
+\PYG{+w}{	}\PYG{n}{segment\PYGZus{}tree}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{\PYGZus{}n}\PYG{p}{)}
+\PYG{+w}{	}\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{n}{n}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{\PYGZus{}n}\PYG{p}{;}
+\PYG{+w}{		}\PYG{n}{st}\PYG{p}{.}\PYG{n}{assign}\PYG{p}{(}\PYG{n}{n}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{+w}{		}\PYG{n}{lazy}\PYG{p}{.}\PYG{n}{assign}\PYG{p}{(}\PYG{n}{n}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{k+kr}{inline}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{query}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{\PYGZus{}i}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{\PYGZus{}j}\PYG{p}{)}
+\PYG{+w}{	}\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{\PYGZus{}i}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{\PYGZus{}j}\PYG{p}{;}
+\PYG{+w}{		}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{\PYGZus{}query}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{n}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{k+kr}{inline}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n}{update}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{\PYGZus{}i}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{\PYGZus{}j}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{\PYGZus{}val}\PYG{p}{)}
+\PYG{+w}{	}\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{\PYGZus{}i}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{\PYGZus{}j}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{val}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{\PYGZus{}val}\PYG{p}{;}
+\PYG{+w}{		}\PYG{n}{\PYGZus{}update}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{n}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{k}{private}\PYG{o}{:}
+\PYG{+w}{	}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{n}\PYG{p}{;}\PYG{+w}{              }\PYG{c+c1}{// size of my array}
+\PYG{+w}{	}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{st}\PYG{p}{;}\PYG{+w}{     }\PYG{c+c1}{// my tree}
+\PYG{+w}{	}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{lazy}\PYG{p}{;}\PYG{+w}{   }\PYG{c+c1}{// my laziness}
+\PYG{+w}{	}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{j}\PYG{p}{;}\PYG{+w}{           }\PYG{c+c1}{// query|update range}
+\PYG{+w}{	}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{val}\PYG{p}{;}\PYG{+w}{            }\PYG{c+c1}{// update value}
+\PYG{c+cm}{/*}
+\PYG{c+cm}{ * After calling this function:}
+\PYG{c+cm}{ * \PYGZhy{} lazy[p] will contain nothing.}
+\PYG{c+cm}{ * \PYGZhy{} st[p] will contain its correct value.}
+\PYG{c+cm}{ * \PYGZhy{} lazy[left(p)] and lazy[right(p)] will contain enough}
+\PYG{c+cm}{ *   information for us to retrieve correct values for}
+\PYG{c+cm}{ *   st[left(p)] and st[right(p)] when we want to later on.}
+\PYG{c+cm}{ */}
+\PYG{+w}{	}\PYG{k+kr}{inline}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{\PYGZus{}propagate}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{l}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{r}\PYG{p}{)}
+\PYG{+w}{	}\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{cur}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{lazy}\PYG{p}{[}\PYG{n}{p}\PYG{p}{];}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{cur}\PYG{p}{)}
+\PYG{+w}{		}\PYG{p}{\PYGZob{}}
+\PYG{+w}{			}\PYG{n}{st}\PYG{p}{[}\PYG{n}{p}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{max}\PYG{p}{(}\PYG{n}{cur}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{st}\PYG{p}{[}\PYG{n}{p}\PYG{p}{]);}
+\PYG{+w}{			}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{l}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{n}{r}\PYG{p}{)}
+\PYG{+w}{			}\PYG{p}{\PYGZob{}}
+\PYG{+w}{				}\PYG{n}{lazy}\PYG{p}{[}\PYG{n}{left}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{max}\PYG{p}{(}\PYG{n}{lazy}\PYG{p}{[}\PYG{n}{left}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)],}\PYG{+w}{ }\PYG{n}{cur}\PYG{p}{);}
+\PYG{+w}{				}\PYG{n}{lazy}\PYG{p}{[}\PYG{n}{right}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{max}\PYG{p}{(}\PYG{n}{lazy}\PYG{p}{[}\PYG{n}{right}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)],}\PYG{+w}{ }\PYG{n}{cur}\PYG{p}{);}
+\PYG{+w}{			}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{			}\PYG{n}{cur}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{		}\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/* Now that you have updated your value, you also need to update}
+\PYG{c+cm}{ * the values of your children. Wrong! This will incur a big time}
+\PYG{c+cm}{ * penalty. Remember what lazy propagation is all about. We are}
+\PYG{c+cm}{ * just going to modify the laziness of our children with the}
+\PYG{c+cm}{ * operation that needs to be done on them. But we are not going}
+\PYG{c+cm}{ * to update their values. Now, the next time we query those child}
+\PYG{c+cm}{ * nodes, we will check their laziness, update their values and}
+\PYG{c+cm}{ * return a correct answer.}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ * This is the part where you need to think how your laziness}
+\PYG{c+cm}{ * will affect the new laziness value of your children}
+\PYG{c+cm}{ * e.g. if the parent interval was supposed to flip all bits}
+\PYG{c+cm}{ * and the child interval was supposed to set, then propagating}
+\PYG{c+cm}{ * the laziness to the child updates the laziness of the child to}
+\PYG{c+cm}{ * reset}
+\PYG{c+cm}{ */}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{k+kr}{inline}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{\PYGZus{}query}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{l}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{r}\PYG{p}{)}
+\PYG{+w}{	}\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{l}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{||}\PYG{+w}{ }\PYG{n}{r}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{)}
+\PYG{+w}{	}\PYG{c+cm}{/* you contribute none, so return 0}
+\PYG{c+cm}{	 * Here, you don\PYGZsq{}t have to propagate before returning, because}
+\PYG{c+cm}{	 * you don\PYGZsq{}t care about having the correct value stored in you.}
+\PYG{c+cm}{	 * Your calling parent also doesn\PYGZsq{}t care about, since there is}
+\PYG{c+cm}{	 * no part of the code where rsq(p, l, r) checks for the value}
+\PYG{c+cm}{	 * of st[left(p)] or st[right(p)]}
+\PYG{c+cm}{	 * As you expect, the code will function correctly of course}
+\PYG{c+cm}{	 * if you call propagate() first, since what it does is that}
+\PYG{c+cm}{	 * it simply stores correct values to more nodes in the tree.}
+\PYG{c+cm}{	 */}
+\PYG{+w}{			}\PYG{k}{return}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{	}\PYG{c+cm}{/* However, if your interval does not lie entirely outside}
+\PYG{c+cm}{	 * the query range, you have to update your value by calling}
+\PYG{c+cm}{	 * propagate() because one of the following will happen:}
+\PYG{c+cm}{	 * 1. You lie entirely inside query range, in which case you will}
+\PYG{c+cm}{	 * return st[p], thus you need it to contain a correct value}
+\PYG{c+cm}{	 * 2. You cross borders with the query range, so you will recurse}
+\PYG{c+cm}{	 * to your children, thus you need to assign appropriate values}
+\PYG{c+cm}{	 * to lazy[left(p)] and lazy[right(p)]}
+\PYG{c+cm}{	 * Either way, you need to call propagate() first.}
+\PYG{c+cm}{	 * Remember what propagate() does? \PYGZhy{} Go up and reread the comment}
+\PYG{c+cm}{	 * just before the definition of of the \PYGZsq{}propagate\PYGZsq{} function.}
+\PYG{c+cm}{	 */}
+\PYG{+w}{		}\PYG{n}{\PYGZus{}propagate}\PYG{p}{(}\PYG{n}{p}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{l}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{r}\PYG{p}{);}
+\PYG{+w}{	}\PYG{c+c1}{// if all inside your query range}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{l}\PYG{+w}{ }\PYG{o}{\PYGZgt{}=}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{r}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{j}\PYG{p}{)}
+\PYG{+w}{		}\PYG{c+cm}{/* return value of current tree node. You know it contains its}
+\PYG{c+cm}{		correct value because propagate() has been called on this node */}
+\PYG{+w}{			}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{st}\PYG{p}{[}\PYG{n}{p}\PYG{p}{];}
+\PYG{+w}{	}\PYG{c+cm}{/* query left and right subtree, which will have correct laziness}
+\PYG{c+cm}{	values because propagate() has been called on their parent}
+\PYG{c+cm}{	and will contain correct values later on because the first thing}
+\PYG{c+cm}{	rsq does is calling propagate on the intervals it\PYGZsq{}s called on */}
+\PYG{+w}{		}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{max}\PYG{p}{(}\PYG{n}{\PYGZus{}query}\PYG{p}{(}\PYG{n}{left}\PYG{p}{(}\PYG{n}{p}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{l}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{avg}\PYG{p}{(}\PYG{n}{l}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{r}\PYG{p}{)),}
+\PYG{+w}{                           }\PYG{n}{\PYGZus{}query}\PYG{p}{(}\PYG{n}{right}\PYG{p}{(}\PYG{n}{p}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{avg}\PYG{p}{(}\PYG{n}{l}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{r}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{r}\PYG{p}{));}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{k+kr}{inline}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{\PYGZus{}update}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{l}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{r}\PYG{p}{)}
+\PYG{+w}{	}\PYG{p}{\PYGZob{}}
+\PYG{c+cm}{/* get correct value of your node and propagate the laziness}
+\PYG{c+cm}{to your children by calling propagate(p, l, r);}
+\PYG{c+cm}{When updating, propagate even if your interval lies outside query}
+\PYG{c+cm}{range, because your calling parent in the recursion stack might}
+\PYG{c+cm}{use your value right after you return, so you need to store}
+\PYG{c+cm}{correct value in node before returning (see case 3 down there)}
+\PYG{c+cm}{*/}
+\PYG{+w}{		}\PYG{n}{\PYGZus{}propagate}\PYG{p}{(}\PYG{n}{p}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{l}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{r}\PYG{p}{);}
+\PYG{+w}{	}\PYG{c+c1}{// We have three cases.}
+\PYG{+w}{	}\PYG{c+c1}{// Case 1: The entire segment is outside your query range.}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{l}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{||}\PYG{+w}{ }\PYG{n}{r}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{			}\PYG{k}{return}\PYG{p}{;}
+\PYG{+w}{		}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{c+c1}{// Case 2: The entire segment is inside my query range.}
+\PYG{+w}{		}\PYG{k}{else}\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{l}\PYG{+w}{ }\PYG{o}{\PYGZgt{}=}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{r}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{j}\PYG{p}{)}
+\PYG{+w}{		}\PYG{p}{\PYGZob{}}
+\PYG{+w}{			}\PYG{n}{st}\PYG{p}{[}\PYG{n}{p}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{max}\PYG{p}{(}\PYG{n}{st}\PYG{p}{[}\PYG{n}{p}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{val}\PYG{p}{);}
+\PYG{+w}{	}\PYG{c+cm}{/* Now that we have updated the value of this node,}
+\PYG{c+cm}{	 * we also need to update right and left subtrees}
+\PYG{c+cm}{	 * (if you are not a leaf node). Wrong! We are not}
+\PYG{c+cm}{	 * going to do that. This is just what lazy}
+\PYG{c+cm}{	 * propagation is all about. We are just going to}
+\PYG{c+cm}{	 * modify their laziness, like we did with the update.}
+\PYG{c+cm}{	 * So the next time we will query them, we won\PYGZsq{}t}
+\PYG{c+cm}{	 * find the correct value directly stored in them,}
+\PYG{c+cm}{	 * but we will be able to obtain the correct value}
+\PYG{c+cm}{	 * from the laziness value stored.}
+\PYG{c+cm}{	 */}
+\PYG{+w}{			}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{l}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{n}{r}\PYG{p}{)}
+\PYG{+w}{			}\PYG{p}{\PYGZob{}}
+\PYG{+w}{			}\PYG{c+c1}{// if you have children, set their laziness}
+\PYG{+w}{				}\PYG{n}{lazy}\PYG{p}{[}\PYG{n}{left}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{max}\PYG{p}{(}\PYG{n}{lazy}\PYG{p}{[}\PYG{n}{left}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)],}\PYG{+w}{ }\PYG{n}{val}\PYG{p}{);}
+\PYG{+w}{				}\PYG{n}{lazy}\PYG{p}{[}\PYG{n}{right}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{max}\PYG{p}{(}\PYG{n}{lazy}\PYG{p}{[}\PYG{n}{right}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)],}\PYG{+w}{ }\PYG{n}{val}\PYG{p}{);}
+\PYG{+w}{			}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{		}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{c+cm}{/* case 3: segment crosses query border}
+\PYG{c+cm}{	 * we recurse and combine}
+\PYG{c+cm}{	 *}
+\PYG{c+cm}{	 * this is why we need the update function to call propagate()}
+\PYG{c+cm}{	 * even if it lies outside query range.}
+\PYG{c+cm}{	 * This is because this function assumes that st[left(p)] and}
+\PYG{c+cm}{	 * st[right(p)] contain correct values after the following}
+\PYG{c+cm}{	 * two update calls return.}
+\PYG{c+cm}{	 * Again, go up there and reread the comment written on the}
+\PYG{c+cm}{	 * propagate() function to know what it does.}
+\PYG{c+cm}{	 */}
+\PYG{+w}{		}\PYG{k}{else}
+\PYG{+w}{		}\PYG{p}{\PYGZob{}}
+\PYG{+w}{			}\PYG{n}{\PYGZus{}update}\PYG{p}{(}\PYG{n}{left}\PYG{p}{(}\PYG{n}{p}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{l}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{avg}\PYG{p}{(}\PYG{n}{l}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{r}\PYG{p}{));}
+\PYG{+w}{			}\PYG{n}{\PYGZus{}update}\PYG{p}{(}\PYG{n}{right}\PYG{p}{(}\PYG{n}{p}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{avg}\PYG{p}{(}\PYG{n}{l}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{r}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{r}\PYG{p}{);}
+\PYG{+w}{			}\PYG{n}{st}\PYG{p}{[}\PYG{n}{p}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{max}\PYG{p}{(}\PYG{n}{st}\PYG{p}{[}\PYG{n}{left}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)],}\PYG{+w}{ }\PYG{n}{st}\PYG{p}{[}\PYG{n}{right}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)]);}
+\PYG{+w}{		}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{};}
+\end{Verbatim}

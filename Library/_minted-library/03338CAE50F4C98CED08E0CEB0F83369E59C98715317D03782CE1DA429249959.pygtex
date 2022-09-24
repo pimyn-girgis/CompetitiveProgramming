@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+c1}{// As much as possible, work only with integers}
+\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{low}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{0.0}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{high}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{10000.0}\PYG{p}{;}
+\PYG{c+cm}{/* if you want to guarantee higher precision, you have 2 options}
+\PYG{c+cm}{\PYGZhy{} use a smaller epsilon}
+\PYG{c+cm}{\PYGZhy{} set the loop for a specific number of iteration (e.g. 100)}
+\PYG{c+cm}{It\PYGZsq{}s preferable to do it the second way since it also limits}
+\PYG{c+cm}{the maximum number of iterations}
+\PYG{c+cm}{*/}
+\PYG{k}{while}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{high}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{low}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mf}{1e\PYGZhy{}9}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{	}\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{mid}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{low}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{high}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mf}{2.0}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{can}\PYG{p}{(}\PYG{n}{mid}\PYG{p}{))}
+\PYG{+w}{		}\PYG{n}{low}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{mid}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{else}\PYG{+w}{ }\PYG{n}{high}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{mid}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{can}\PYG{p}{(}\PYG{n}{low}\PYG{p}{))}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{low}\PYG{p}{;}
+\PYG{k}{return}\PYG{+w}{ }\PYG{l+m+mf}{\PYGZhy{}1.0}\PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,76 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k+kn}{import} \PYG{n+nn}{java.util.*}\PYG{p}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{java.lang.*}\PYG{p}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{java.io.*}\PYG{p}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{java.math.*}\PYG{p}{;}
+\PYG{k+kd}{class} \PYG{n+nc}{Main}
+\PYG{p}{\PYGZob{}}
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{n}{String} \PYG{n}{a}\PYG{p}{;}
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{n}{String} \PYG{n}{b}\PYG{p}{;}
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{n}{BigInteger}\PYG{o}{[][]} \PYG{n}{x}\PYG{o}{=} \PYG{k}{new} \PYG{n}{BigInteger}\PYG{o}{[}\PYG{l+m+mi}{10100}\PYG{o}{][]}\PYG{p}{;}
+	\PYG{c+cm}{/* x[i][j] holds the number of subsequences of prefix a[0, i] that match}
+\PYG{c+cm}{	 * the first j characters of b[0, j]}
+\PYG{c+cm}{	*/}
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{init}\PYG{p}{()}
+	\PYG{p}{\PYGZob{}}
+		\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{10100}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)}
+		\PYG{p}{\PYGZob{}}
+			\PYG{n}{x}\PYG{o}{[}\PYG{n}{i}\PYG{o}{]} \PYG{o}{=} \PYG{k}{new} \PYG{n}{BigInteger}\PYG{o}{[}\PYG{l+m+mi}{105}\PYG{o}{]}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{solve}\PYG{p}{()}
+	\PYG{p}{\PYGZob{}}
+		\PYG{c+c1}{// initially, no subsequences of b are found in a[0, 0]}
+		\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{105}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)}
+		\PYG{p}{\PYGZob{}}
+			\PYG{n}{x}\PYG{o}{[}\PYG{l+m+mi}{0}\PYG{o}{][}\PYG{n}{i}\PYG{o}{]} \PYG{o}{=} \PYG{n}{BigInteger}\PYG{p}{.}\PYG{n+na}{ZERO}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{c+cm}{/* if the first character of a matches the first character of}
+\PYG{c+cm}{		 * b, then x[0][0] = 1, because we have found k subsequences}
+\PYG{c+cm}{		 * of a[0, i] that match b[0, j] (i = j = 0; k = 1)}
+\PYG{c+cm}{		 */}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{==} \PYG{n}{b}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{))}
+		\PYG{p}{\PYGZob{}}
+			\PYG{n}{x}\PYG{o}{[}\PYG{l+m+mi}{0}\PYG{o}{][}\PYG{l+m+mi}{0}\PYG{o}{]} \PYG{o}{=} \PYG{n}{BigInteger}\PYG{p}{.}\PYG{n+na}{ONE}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{a}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{();} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)}
+		\PYG{p}{\PYGZob{}}
+			\PYG{c+c1}{// initialize to same values as at the previous character}
+			\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{n}{b}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{();} \PYG{o}{++}\PYG{n}{j}\PYG{p}{)}
+			\PYG{p}{\PYGZob{}}
+				\PYG{n}{x}\PYG{o}{[}\PYG{n}{i}\PYG{o}{][}\PYG{n}{j}\PYG{o}{]} \PYG{o}{=} \PYG{n}{x}\PYG{o}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{][}\PYG{n}{j}\PYG{o}{]}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{n}{b}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{();} \PYG{o}{++}\PYG{n}{j}\PYG{p}{)}
+			\PYG{p}{\PYGZob{}}
+				\PYG{c+c1}{// if you found a matching character}
+				\PYG{k}{if} \PYG{p}{(}\PYG{n}{b}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{n}{j}\PYG{p}{)} \PYG{o}{==} \PYG{n}{a}\PYG{p}{.}\PYG{n+na}{charAt}\PYG{p}{(}\PYG{n}{i}\PYG{p}{))}
+				\PYG{p}{\PYGZob{}}
+					\PYG{c+cm}{/* if it\PYGZsq{}s at the beginning,}
+\PYG{c+cm}{					 * increment x[i][0]}
+\PYG{c+cm}{					 * else, then all subsequences of}
+\PYG{c+cm}{					 * length j \PYGZhy{} 1 ending at or before}
+\PYG{c+cm}{					 * i will become subsequences}
+\PYG{c+cm}{					 * of length j ending at i}
+\PYG{c+cm}{					 */}
+					\PYG{n}{x}\PYG{o}{[}\PYG{n}{i}\PYG{o}{][}\PYG{n}{j}\PYG{o}{]} \PYG{o}{=} \PYG{p}{(}\PYG{n}{j} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)}
+						\PYG{o}{?} \PYG{n}{x}\PYG{o}{[}\PYG{n}{i}\PYG{o}{][}\PYG{n}{j}\PYG{o}{]}\PYG{p}{.}\PYG{n+na}{add}\PYG{p}{(}\PYG{n}{BigInteger}\PYG{p}{.}\PYG{n+na}{ONE}\PYG{p}{)}
+						\PYG{p}{:} \PYG{n}{x}\PYG{o}{[}\PYG{n}{i}\PYG{o}{][}\PYG{n}{j}\PYG{o}{]}\PYG{p}{.}\PYG{n+na}{add}\PYG{p}{(}\PYG{n}{x}\PYG{o}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{][}\PYG{n}{j}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{]}\PYG{p}{);}
+				\PYG{p}{\PYGZcb{}}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{main} \PYG{p}{(}\PYG{n}{String}\PYG{o}{[]} \PYG{n}{args}\PYG{p}{)}
+	\PYG{p}{\PYGZob{}}
+			\PYG{n}{init}\PYG{p}{();}
+		\PYG{n}{Scanner} \PYG{n}{sc} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Scanner}\PYG{p}{(}\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{in}\PYG{p}{);}
+		\PYG{n}{a} \PYG{o}{=} \PYG{n}{sc}\PYG{p}{.}\PYG{n+na}{nextLine}\PYG{p}{();}
+		\PYG{n}{b} \PYG{o}{=} \PYG{n}{sc}\PYG{p}{.}\PYG{n+na}{nextLine}\PYG{p}{();}
+		\PYG{n}{solve}\PYG{p}{();}
+		\PYG{c+cm}{/* print the number of subsequences ending at or before}
+\PYG{c+cm}{		 * the last character of a that match all up to the last}
+\PYG{c+cm}{		 * character of b}
+\PYG{c+cm}{		 */}
+		\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{println}\PYG{p}{(}\PYG{n}{x}\PYG{o}{[}\PYG{n}{a}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{o}{][}\PYG{n}{b}\PYG{p}{.}\PYG{n+na}{length}\PYG{p}{()}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{]}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

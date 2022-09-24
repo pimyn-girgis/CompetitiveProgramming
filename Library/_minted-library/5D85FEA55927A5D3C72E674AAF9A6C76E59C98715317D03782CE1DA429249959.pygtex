@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{p}{(}\PYG{k+kt}{int}\PYG{p}{)(}\PYG{n}{pow}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{fmod}\PYG{p}{(}\PYG{n}{p}\PYG{o}{*}\PYG{n}{log10}\PYG{p}{(}\PYG{n}{x}\PYG{p}{),}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{))}\PYG{o}{*}\PYG{l+m+mi}{100}\PYG{p}{)}
+\end{Verbatim}

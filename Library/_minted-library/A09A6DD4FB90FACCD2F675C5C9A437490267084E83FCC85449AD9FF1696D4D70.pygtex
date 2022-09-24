@@ -1,0 +1,26 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+c1}{// C++\PYGZsq{}s long\PYGZhy{}long\PYGZhy{}int type can hold up to Fib(92)}
+\PYG{c+cm}{/* To find the Zeckendorf representation of an integer x, use a greedy}
+\PYG{c+cm}{that always picks the largest Fibonacci number that is \PYGZlt{}= x */}
+\PYG{k+kn}{import} \PYG{n+nn}{java.util.Scanner}\PYG{p}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{java.math.BigInteger}\PYG{p}{;}
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Main} \PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{static} \PYG{k+kd}{final} \PYG{k+kt}{int} \PYG{n}{MAX} \PYG{o}{=} \PYG{l+m+mi}{150}\PYG{p}{;}
+    \PYG{k+kd}{static} \PYG{n}{BigInteger} \PYG{n}{memo}\PYG{o}{[]} \PYG{o}{=} \PYG{k}{new} \PYG{n}{BigInteger}\PYG{o}{[}\PYG{n}{MAX}\PYG{o}{]}\PYG{p}{;}
+    \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{init}\PYG{p}{()}
+    \PYG{p}{\PYGZob{}}
+        \PYG{n}{memo}\PYG{o}{[}\PYG{l+m+mi}{0}\PYG{o}{]} \PYG{o}{=} \PYG{n}{BigInteger}\PYG{p}{.}\PYG{n+na}{ONE}\PYG{p}{;}
+        \PYG{n}{memo}\PYG{o}{[}\PYG{l+m+mi}{1}\PYG{o}{]} \PYG{o}{=} \PYG{n}{BigInteger}\PYG{p}{.}\PYG{n+na}{valueOf}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{);}
+        \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{2}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{MAX}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)}
+            \PYG{n}{memo}\PYG{o}{[}\PYG{n}{i}\PYG{o}{]} \PYG{o}{=} \PYG{n}{memo}\PYG{o}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{]}\PYG{p}{.}\PYG{n+na}{add}\PYG{p}{(}\PYG{n}{memo}\PYG{o}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{o}{]}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{c+c1}{// YOU ASSUMED THAT THE INPUT IS ALWAYS NONZERO!}
+    \PYG{c+c1}{// DON\PYGZsq{}T MAKE SUCH ASSUMPTIONS AGAIN}
+    \PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{main}\PYG{p}{(}\PYG{n}{String}\PYG{o}{[]} \PYG{n}{args}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{Scanner} \PYG{n}{sc} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Scanner}\PYG{p}{(}\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{in}\PYG{p}{);}
+        \PYG{k}{while}\PYG{p}{(}\PYG{n}{sc}\PYG{p}{.}\PYG{n+na}{hasNext}\PYG{p}{())\PYGZob{}}
+            \PYG{n}{init}\PYG{p}{();}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
