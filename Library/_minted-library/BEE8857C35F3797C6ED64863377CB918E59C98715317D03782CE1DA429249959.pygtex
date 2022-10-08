@@ -1,4 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
-\PYG{c+cm}{/* A cyclic component of a graph G is a maximal subgraph G` such that for all}
-\PYG{c+cm}{u, v in G`, there are at least 2 disjoint path from u to v */}
-\end{Verbatim}
