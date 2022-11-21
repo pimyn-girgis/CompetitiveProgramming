@@ -33,7 +33,7 @@
 using namespace std;
 
 #define MAX 755
-int arr1[MAX], arr2[MAX], sum[MAX * MAX];
+unsigned int arr1[MAX], arr2[MAX], sum[MAX * MAX];
 int k;
 
 int main()
@@ -42,7 +42,6 @@ int main()
 	{
 		for(int i = 0; i < k; ++i)
 			scanf("%d", sum + i);
-
 
 		for(int m = 1; m < k; ++m)
 		{

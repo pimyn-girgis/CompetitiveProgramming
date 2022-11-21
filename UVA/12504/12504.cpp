@@ -1,8 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-void tokenize(unordered_map<string, string> &dic)
+void tokenize(map<string, string> &dic)
 {
 	char in[105];
 	char key[] = "{},:\n";
@@ -28,8 +27,8 @@ int main()
 	scanf("%d\n", &tc);
 	while(tc--)
 	{
-		unordered_map <string, string> oldDictionary;
-		unordered_map <string, string> newDictionary;
+		map <string, string> oldDictionary;
+		map <string, string> newDictionary;
 
 		tokenize(oldDictionary);
 		tokenize(newDictionary);
@@ -49,9 +48,9 @@ int main()
 				removed.insert(u.first);
 
 		if(added.empty() && removed.empty() && edited.empty()) printf("No changes\n");
-		if(added.size()) out(added, '+');
-		if(removed.size()) out(removed, '-');
-		if(edited.size()) out(edited, '*');
+		if(!added.empty()) out(added, '+');
+		if(!removed.empty()) out(removed, '-');
+		if(!edited.empty()) out(edited, '*');
 
 		printf("\n");
 	}

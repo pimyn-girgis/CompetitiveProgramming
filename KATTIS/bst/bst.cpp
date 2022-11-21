@@ -6,8 +6,6 @@ int dist[300005];
 
 int main() 
 {
-	memset(dist, 0, sizeof(dist));
-
 	int n;
 	scanf("%d", &n);
 
@@ -19,7 +17,7 @@ int main()
 		int val;
 		scanf("%d", &val);
 
-		auto cur =bst.insert(val).first;
+		auto cur = bst.insert(val).first;
 
 		int depth = 0;
 
@@ -40,7 +38,7 @@ int main()
 		}
 
 		dist[val] = depth;
-		printf("%llu\n", c += depth);
+			printf("%llu\n", c += depth);
 	}
 
 	return 0;

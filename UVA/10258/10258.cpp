@@ -18,7 +18,7 @@ void init()
 	memset(pen, 0, sizeof(pen));
 	memset(potPen, 0, sizeof(potPen));
 	memset(sub, 0, sizeof(sub));
-	for(int i=0;i<105;++i) leader[i] = i;
+	for(int i = 0; i < 105 ; ++i) leader[i] = i;
 }
 
 bool comp(int x, int y)
@@ -64,9 +64,9 @@ void solve()
 
 int main()
 {
-	int ts;
-	scanf("%d\n\n", &ts);
-	while (ts--)
+	int tc;
+	scanf("%d", &tc);
+	while (tc--)
 	{
 		init();
 		solve();

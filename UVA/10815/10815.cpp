@@ -6,16 +6,14 @@ char sep[128];
 
 int main()
 {
-
 	iota(sep, sep + 127, 1);
-	sep[127] = 0;
 	for(auto &u : sep)
 		if(isalpha(u))
 			u = 1;
 
 	set <string> dictionary;
 
-	while(fgets(input, sizeof(input), stdin))
+	while(scanf("%s", input) != EOF)
 	{
 		for(char *c = input; *c; ++c)
 			*c = tolower(*c);

@@ -3,6 +3,7 @@
 #include <string.h>
 #include <vector>
 #include <array>
+#include <algorithm>
 
 // lb = log_2(base). For example, if you want to use a base of 16, set lb to 4.
 #define lb 8
@@ -39,7 +40,7 @@ int main() {
 		v.clear();
 		v.push_back(a);
 		while(--n) v.push_back((v.back()*b + a)%c);
-		
+
 		radix();
 		
 		ll hash = 0LL;
