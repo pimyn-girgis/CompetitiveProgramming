@@ -27,7 +27,7 @@ bool crack(int len)
     if(!len) return login();
 
     char &c = guess[len - 1];
-    for(c = 0; c < CHAR_MAX; ++c)
+    for(char &c = guess 0; c < CHAR_MAX; ++c)
         if(crack(len - 1))
             return true;
     

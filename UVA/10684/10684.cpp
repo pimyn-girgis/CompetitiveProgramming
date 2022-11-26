@@ -2,8 +2,8 @@
 **************************************************************
 * Author  : Bemen Girgis
 * Contact : bemen@girgis.org
-* Problem : 10895 UVA
-* Link    : https://onlinejudge.org/external/108/p10895.pdf
+* Problem : 10684 UVA
+* Link    : https://onlinejudge.org/external/106/p10684.pdf
 **************************************************************
 * Approach: 
 **************************************************************
@@ -16,20 +16,23 @@ using namespace __gnu_pbds;
 
 int main()
 {
-	int m, n;
-	scanf("%d %d\n", &m, &n);
-
-	vector<int>(n);
-
-	for(int i = 0; i < m; ++i)
+	int n;
+	
+	while(scanf("%d", &n), n)
 	{
-		scanf("%d%*c", &num);
+		int val = 0;
+		int sum = 0;
+		int max_sum = 0;
 
-		int val;
-		for(int i = 0; i < num; ++i)
+		for(int i = 0; i < n; ++i)
 		{
-			scanf("%d%*c", &val);
+			scanf("%d", &val);
+			max_sum = max(sum += val, max_sum);
+			if(sum < 0) sum = 0;
 		}
+
+		if(max_sum) printf("The maximum winning streak is %d.\n", max_sum);
+		else printf("Losing streak.\n");
 	}
 
 	return 0;
