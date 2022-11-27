@@ -14,7 +14,7 @@
 const int min_len = 4;
 const int max_len = 10;
 
-char password[] = "jf&#";
+char password[max_len + 1] = "hello1";
 char guess[max_len + 1];
 
 bool login()
@@ -27,7 +27,7 @@ bool crack(int len)
     if(!len) return login();
 
     char &c = guess[len - 1];
-    for(char &c = guess 0; c < CHAR_MAX; ++c)
+    for(c = 0; c < CHAR_MAX; ++c)
         if(crack(len - 1))
             return true;
     
