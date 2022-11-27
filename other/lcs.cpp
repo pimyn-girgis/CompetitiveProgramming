@@ -1,13 +1,7 @@
-/*
-********************************************
-* Authors : Bemen Girgis & Michael Henein
-********************************************
-*/
-
 #include <stdio.h>
-#include <string.h>
 #include <string>
 using std::string;
+#include <string.h>
 
 int lcs(const string &x, const string &y) //length of Longest Common Substring
 {
@@ -32,11 +26,8 @@ int main()
     string x[] = {"STOPP", "Hello", "Pimyn", "Yes", "Geek", "Stop"};
     string y[] = {"claySTOPPclay", "Hell" , "Piman", "Yee", "nerd", "diff"};
 
-    for(int i = 0; i < sizeof(x)/sizeof(string); ++i)
+    for(int i = 0; i < 5; ++i)
         printf("%d\n", lcs(x[i], y[i]));
 
     return 0;
 }
-
-//fiona
-//fradition
