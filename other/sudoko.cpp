@@ -11,8 +11,8 @@
 
 int sudoku[9][9];
 
-inline bool is_taken(int val, int &taken) __attribute__((always_inline));
-inline bool is_taken(int val, int &taken)
+inline bool is_taken(int &val, int &taken) __attribute__((always_inline));
+inline bool is_taken(int &val, int &taken)
 {
     if(val && taken & (1 << val) )
         return true;
@@ -107,10 +107,8 @@ int main()
  
     for(int i = 0; i < 1000; ++i)
     {
-        memcpy(sudoku, temp, sizeof(sudoku));
-
-        solve();
-        if(!(i % 10)) printf("*");
+        // memcpy(sudoku, temp, sizeof(sudoku));
+        // solve();
     }
 
     return 0;
