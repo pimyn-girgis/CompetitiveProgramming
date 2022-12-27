@@ -6,42 +6,45 @@
 **************************************************************
 */
 
-#include <stdio.h>
-#include <string.h>
-#include <algorithm>
-#include <climits>
+#include <bits/stdc++.h>
+using namespace std;
 
-const int min_len = 4;
-const int max_len = 10;
+typedef pair<int, int> pii;
 
-char password[] = "jf&#";
-char guess[max_len + 1];
 
-bool login()
+//instead of dividing by cols I'll divide by rows, makes code easier
+
+bool is_valid(int x, const matrix &mat)
 {
-    return !strcmp(guess, password);
+    return x >= 0 && x < mat.size(); //make sure your element is within bounds
 }
 
-bool crack(int len)
+pii find_peak_element(const matrix &mat, int st, int en)
 {
-    if(!len) return login();
+    int mid = (st + en) / 2; //middle row
+    auto max_ind = max_element(mat[mid].begin(), mat[mid].end()) - mat[mid].begin(); //index for maximum value in row
+    auto max_val = mat[mid][max_ind]; //value at max_ind
 
-    char &c = guess[len - 1];
-    for(c = 0; c < CHAR_MAX; ++c)
-        if(crack(len - 1))
-            return true;
-    
-    return false;
+    if(is_valid(mid + 1, mat) && max_val < mat[mid + 1][max_ind]) //if the element below max is greater than it, minimize your search range to the bottom part
+        return find_peak_element(mat, mid + 1, en);
+    if(is_valid(mid - 1, mat) && max_val < mat[mid + -1][max_ind]) //if the element above max is greater than it, minimize your search range to the top part
+        return find_peak_element(mat, st + 1, mid);
+
+    return make_pair(mid, max_ind); //otherwise, you reached a peak
 }
 
-int main(void)
+pii find_peak_element(const matrix &mat)
 {
-    for(int i = min_len; i <= max_len; ++i)
-        if(crack(i))
-        {
-            printf("%s\n", guess);
-            break;
-        }
+    return find_peak_element(mat, 0, mat.size() - 1);
+}
+
+int main()
+{
+    matrix mat = {{10, 20, 15},
+                  {21, 20 ,14},
+                  { 7, 16, 32}};
+    auto ans = find_peak_element(mat);
+    printf("%d %d\n", ans.first, ans.second);
 
     return 0;
 }

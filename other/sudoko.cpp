@@ -104,12 +104,8 @@ int main()
         {0, 0, 8,  5, 0, 0,  0, 1, 0},
         {0, 9, 0,  0, 0, 0,  4, 0, 0}
     };
- 
-    for(int i = 0; i < 1000; ++i)
-    {
-        // memcpy(sudoku, temp, sizeof(sudoku));
-        // solve();
-    }
+
+    solve();
 
     return 0;
 }

@@ -17,8 +17,6 @@ int lCSS(const char x[], const char y[])
     int dp[row + 1][col + 1];
     memset(dp, 0, sizeof(dp));
 
-    printf("%zu\n", sizeof(dp));
-
     for(int i = 1; i <= row; ++i)
         for(int j = 1; j <= col; ++j)
             if(x[i] == y[j])
@@ -31,7 +29,7 @@ int lCSS(const char x[], const char y[])
 
 int main()
 {
-    // printf("%d\n", lCSS("storage", "storm"));
+    printf("%d\n", lCSS("storage", "storm"));
 
     char x[1000];
     int n = 10;

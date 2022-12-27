@@ -2,8 +2,8 @@
 **************************************************************
 * Author  : Bemen Girgis
 * Contact : bemen@girgis.org
-* Problem : 10895 UVA
-* Link    : https://onlinejudge.org/external/108/p10895.pdf
+* Problem : ##### UVA
+* Link    : https://onlinejudge.org/external/###/p#####.pdf
 **************************************************************
 * Approach: 
 **************************************************************
@@ -14,24 +14,25 @@
 using namespace std;
 using namespace __gnu_pbds;
 
+vector<vector<int>> adj(21);
+
 int main()
 {
-	int rows, cols;
-	scanf("%d %d\n", &rows, &cols);
-
-	vector<int>(n);
-
-	for(int i = 0; i < rows; ++i)
+	int fire, tc = 1;
+	while(scanf("%d\n", &fire) != EOF)
 	{
-		int non_zero;
-		scanf("%d%*c", &non_zero);
+		for(auto &u : adj)
+			u.clear();
 
-		int val;
-		for(int i = 0; i < non_zero; ++i)
+		int from, to;
+		while(scanf("%d %d\n", &from, &to), from && to)
 		{
-			scanf("%d%*c", &val);
+			--from, --to;
+			adj[from].push_back(to);
+			adj[to].push_back(from);
 		}
+		
+		printf("CASE %d:\n", tc++);
 	}
-
 	return 0;
 }

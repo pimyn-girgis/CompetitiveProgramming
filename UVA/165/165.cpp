@@ -2,8 +2,8 @@
 **************************************************************
 * Author  : Bemen Girgis
 * Contact : bemen@girgis.org
-* Problem : 10895 UVA
-* Link    : https://onlinejudge.org/external/108/p10895.pdf
+* Problem : ##### UVA
+* Link    : https://onlinejudge.org/external/###/p#####.pdf
 **************************************************************
 * Approach: 
 **************************************************************
@@ -14,24 +14,18 @@
 using namespace std;
 using namespace __gnu_pbds;
 
+void preprocess()
+{
+}
+
 int main()
 {
-	int rows, cols;
-	scanf("%d %d\n", &rows, &cols);
+	preprocess();
 
-	vector<int>(n);
-
-	for(int i = 0; i < rows; ++i)
+	int h, k;
+	while (scanf("%d %d", &h, &k), h && k)
 	{
-		int non_zero;
-		scanf("%d%*c", &non_zero);
-
-		int val;
-		for(int i = 0; i < non_zero; ++i)
-		{
-			scanf("%d%*c", &val);
-		}
 	}
-
+	
 	return 0;
 }
