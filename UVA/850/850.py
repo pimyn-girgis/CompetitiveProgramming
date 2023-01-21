@@ -2,8 +2,8 @@
 **************************************************************
 * Author  : Bemen Girgis
 * Contact : bemen@girgis.org
-* Problem : 592 UVA
-* Link    : https://onlinejudge.org/external/5/592.pdf
+* Problem : ##### UVA
+* Link    : https://onlinejudge.org/external/###/p#####.pdf
 **************************************************************
 * Approach: 
 **************************************************************
@@ -16,23 +16,5 @@ using namespace __gnu_pbds;
 
 int main()
 {
-	int n;
-	int statements[50];
-	int caseNo = 1;
-	char input[100];
-
-	while (scanf("%d\n", &n), n)
-	{
-
-		for(int i = 0; i < n; ++i)
-		{
-			fgets(input, sizeof(input), stdin);
-
-			statements[0] = input[0];
-		}
-
-		printf("Conversation #%d\n", caseNo);
-	}
-	
 	return 0;
 }

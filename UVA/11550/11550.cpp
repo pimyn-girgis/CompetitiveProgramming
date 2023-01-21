@@ -20,11 +20,9 @@ int main()
 	scanf("%d", &tc);
 	int matrix[8][30];
 
-	unordered_map<int, int> edges;
-
 	while(tc--)
 	{
-		edges.clear();
+		map<int, int> edges;
 		int num_of_vertices, num_of_edges;
 		scanf("%d %d", &num_of_vertices, &num_of_edges);
 

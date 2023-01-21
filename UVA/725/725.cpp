@@ -10,36 +10,37 @@
 */
 
 #include <bits/stdc++.h>
-#include <bits/extc++.h>
+#include <cmath>
+#include <cstdio>
 using namespace std;
-using namespace __gnu_pbds;
 
 int main()
 {
-	int n;
-	bool first = 1;
-	while(scanf("%d", &n), n)
-	{
-		bool flag = 1;
-		if(!first)
-			printf("\n");
-		else first = 0;
+	int n = 1;
 
-		for(int low = 1234; low <= 98765 / n; ++low)
-		{
-			int high = low * n;
-			int temp, used = (low < 10000);
-			temp = high; while(temp){used |= 1 << (temp % 10); temp /= 10;}
-			temp = low; while(temp){used |= 1 << (temp % 10); temp /= 10;}
-			if(used == (1 << 10) - 1)
-			{
-				printf("%05d / %05d = %d\n", high, low, n);
-				flag = 0;
+	while (n) {
+		if(n == 1) scanf("%d", &n);
+		bool flag = false;
+
+		for (int fghij = 1234; fghij <= 98765 / n; ++fghij) {
+			int abcde = fghij * n, taken = 0, temp;
+
+			temp = abcde; while (temp) {taken |= 1L << (temp % 10); temp /= 10;}
+			temp = fghij; while (temp) {taken |= 1L << (temp % 10); temp /= 10;}
+
+			taken |= (abcde <= 9999) || (fghij <= 9999);
+
+			if (taken + 1 == 1 << 10) {
+				printf("%05d / %05d = %d\n", abcde, fghij, n);
+				flag = true;
 			}
 		}
 
-		if(flag)
+		if(!flag)
 			printf("There are no solutions for %d.\n", n);
+
+		scanf("%d", &n);
+		if(n) printf("\n");
 	}
 
 	return 0;

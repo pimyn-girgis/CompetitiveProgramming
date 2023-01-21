@@ -9,12 +9,10 @@
 **************************************************************
 */
 
-#include <bits/stdc++.h>
-#include <bits/extc++.h>
+#include <cstdio>
+#include <vector>
 using namespace std;
-using namespace __gnu_pbds;
 
-int main()
-{
+int main() {
 	return 0;
 }
