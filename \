@@ -1,0 +1,53 @@
+/*
+**************************************************************
+* Author  : Bemen Girgis
+* Contact : bemen@girgis.org
+* Problem : 11236 UVA
+* Link    : https://onlinejudge.org/external/112/p11236.pdf
+**************************************************************
+* Approach: 
+**************************************************************
+*/
+
+#include <cstdio>
+#include <functional>
+#include <numeric>
+using namespace std;
+
+int sol[4];
+
+long long product() {
+	long long val = 1;
+
+	for (auto u : sol) {
+		val *= u;
+	}
+
+	return val;
+}
+
+void solve(int pos = 0, long long sum = 1) {
+	if (pos == 4) {
+		if (sum * (1000000) == product()) {
+			for (int i = 0; i < 4; ++i) {
+				printf("%d%c", sol[i], i == 4 - 1? '\n' : ' ');
+			}
+		}
+
+		return;
+	}
+
+	for (int i = 1; i <= 2000; ++i) {
+		if (sum + i > 2000) {
+			return;
+		}
+
+		sol[pos] = i;
+		solve(pos + 1, sum + i);
+	}
+}
+
+int main() {
+	solve();
+	return 0;
+}
