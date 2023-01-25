@@ -22,7 +22,12 @@ int tv[9], ans[9], times[9];
 pair<int, int> ali[9];
 
 int min_dist(int val) {
-	return abs(*min_element(times, times + p + 1, [val](const int &x, const int &y){return abs(x - val) < abs(y - val);}) - val);
+
+	auto closer = [val](const int &x, const int &y) {
+		return abs(x - val) < abs(y - val);
+	};
+
+	return abs(*min_element(times, times + p + 1, closer) - val);
 }
 
 int main() {
@@ -53,8 +58,7 @@ int main() {
 			}
 
 			for (int i = 0; i < a; ++i) {
-				int temp = min_dist(ali[i].second);
-				temp_err[ali[i].first] += temp;
+				temp_err[ali[i].first] += min_dist(ali[i].second);
 			}
 
 			if (memcmp(temp_err, err, sizeof(err)) < 0) {
