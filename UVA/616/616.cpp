@@ -10,8 +10,6 @@
 */
 
 #include <algorithm>
-#include <functional>
-#include <set>
 #include <vector>
 #include <cstdio>
 #include <cmath>
@@ -38,7 +36,6 @@ int main() {
 
 		div.clear();
 		int sqr = sqrt(n - 1);
-		bool flag = false;
 
 		for (int i = 1; i <= sqr; ++i) {
 			if ((n - 1) % i == 0) {
