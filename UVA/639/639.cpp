@@ -26,6 +26,11 @@ bool in_bounds(int i, int j) {
 
 //Can I input a rook here?
 bool is_valid(int i, int j) {
+
+	if (board[i][j] == 'X') {
+		return false;
+	}
+
 	const int dx[4] = {-1, 1, 0, 0};
 	const int dy[4] = {0, 0, -1, 1};
 
@@ -44,7 +49,6 @@ bool is_valid(int i, int j) {
 
 
 int solve(int i = 0, int j = 0, int cur = 0) {
-
 	if (j == n) {
 		++i;
 		j = 0;
@@ -52,10 +56,6 @@ int solve(int i = 0, int j = 0, int cur = 0) {
 
 	if (i == n) {
 		return cur;
-	}
-
-	if (board[i][j] == 'X') {
-		return solve(i, j + 1, cur);
 	}
 
 	int rook = -1;
