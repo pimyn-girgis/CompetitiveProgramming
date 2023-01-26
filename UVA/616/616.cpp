@@ -57,11 +57,7 @@ int main() {
 		}
 
 		printf("%d coconuts, ", n);
-		if (ans != -1) {
-			printf("%d people and 1 monkey\n", ans);
-		} else {
-			printf("no solution\n");
-		}
+		printf(ans == -1? ("%d people and 1 monkey\n", ans) : "no solution\n");
 	}
 
 	return 0;
