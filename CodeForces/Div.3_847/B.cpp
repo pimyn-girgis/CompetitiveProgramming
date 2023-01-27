@@ -20,12 +20,7 @@ bool solve(int t, int sum, int max_val) {
     }
 
     if (!t) {
-
-        if (sum != s) {
-            return false;
-        }
-
-        return true;
+        return sum == s;
     }
 
     for (int i = 1; i <= max_val; ++i) {
