@@ -17,7 +17,21 @@ using namespace std;
 typedef long long unsigned llu ;
 const llu mod = 100000007;
 
+int ans[10000];
+
 int main() {
+
+	/*
+	 * missing = 2a^2
+	 * thickness = b
+	 * len = 2a + 3b
+	 * wid = 2b + a
+	 * len * wid = 2a^2 + 7ab + 6b^2
+	 * n + 2a^2 = 2a^2 + 7ab + 6b^2
+	 * n = 7ab + 6b^2
+	 * 7ab = n - 6b^2
+	 * a = (n - 6b^2)/7b
+	*/
 
 	llu n;
 	while (scanf("%llu", &n), n) {
