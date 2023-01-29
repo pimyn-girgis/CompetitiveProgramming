@@ -7,26 +7,26 @@
 
 #include <algorithm>
 #include <cstdio>
-#include <iostream>
-#include <bitset>
+#include <string>
+#include <set>
 using namespace std;
-
-void solve() {
-}
 
 int main() {
 
-    int tc; scanf("%d", &tc);
+    set<string> weird;
+    char input[100];
+    FILE *pi = fopen("file.out", "r");
+    FILE *cm = fopen("comp", "r");
 
-    while (tc--) {
-        int x; scanf("%d", &x);
-        if (x & 1) {
-            printf("-1");
-            continue;
-        }
-
-
+    while (fgets(input, sizeof(input), pi)) {
+        weird.emplace(input);
     }
+
+    while (fgets(input, sizeof(input), cm)) {
+        weird.erase(input);
+    }
+
+    printf("%zu\n", weird.size());
 
     return 0;
 }
