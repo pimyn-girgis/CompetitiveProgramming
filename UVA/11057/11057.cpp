@@ -2,17 +2,15 @@
 **************************************************************
 * Author  : Bemen Girgis
 * Contact : bemen@girgis.org
-* Problem : ##### UVA
-* Link    : https://onlinejudge.org/external/###/p#####.pdf
+* Problem : 11057 UVA
+* Link    : https://onlinejudge.org/external/110/p11057.pdf
 **************************************************************
 * Approach: 
 **************************************************************
 */
 
 #include <bits/stdc++.h>
-#include <bits/extc++.h>
 using namespace std;
-using namespace __gnu_pbds;
 
 int arr[10005];
 
