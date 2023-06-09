@@ -4,3 +4,4 @@ other/
 Book/
 .kattisSubmit/
 .test/
+.DS_Store
