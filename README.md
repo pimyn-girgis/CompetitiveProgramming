@@ -54,7 +54,6 @@ The solutions present in this repository serve as a record of my journey in comp
  | KATTIS | [greedilyincreasing](https://open.kattis.com/problems/greedilyincreasing) | [greedilyincreasing.cpp](./KATTIS/greedilyincreasing/greedilyincreasing.cpp) | ✅ |
  | KATTIS | [downtime](https://open.kattis.com/problems/downtime) | [downtime.cpp](./KATTIS/downtime/downtime.cpp) | ✅ |
  | KATTIS | [conversationlog](https://open.kattis.com/problems/conversationlog) | [conversationlog.cpp](./KATTIS/conversationlog/conversationlog.cpp) | ✅ |
- | KATTIS | [doctorkattis](https://open.kattis.com/problems/doctorkattis) | [temp.cpp](./KATTIS/doctorkattis/temp.cpp) | ✅ |
  | KATTIS | [doctorkattis](https://open.kattis.com/problems/doctorkattis) | [doctorkattis.cpp](./KATTIS/doctorkattis/doctorkattis.cpp) | ✅ |
  | KATTIS | [marswindow](https://open.kattis.com/problems/marswindow) | [marswindow.cpp](./KATTIS/marswindow/marswindow.cpp) | ✅ |
  | KATTIS | [divideby100](https://open.kattis.com/problems/divideby100) | [divideby100.cpp](./KATTIS/divideby100/divideby100.cpp) | ✅ |
@@ -95,7 +94,6 @@ The solutions present in this repository serve as a record of my journey in comp
  | KATTIS | [rimski](https://open.kattis.com/problems/rimski) | [rimski.cpp](./KATTIS/rimski/rimski.cpp) | ✅ |
  | KATTIS | [justaminute](https://open.kattis.com/problems/justaminute) | [justaminute.cpp](./KATTIS/justaminute/justaminute.cpp) | ✅ |
  | KATTIS | [bst](https://open.kattis.com/problems/bst) | [bst.cpp](./KATTIS/bst/bst.cpp) | ✅ |
- | UVA | [UVA](https://onlinejudge.org/external/U/UVA.pdf) | [template.cpp](./UVA/UVA/template.cpp) | ✅ |
  | UVA | [307](https://onlinejudge.org/external/3/307.pdf) | [307.cpp](./UVA/307/307.cpp) | ✅ |
  | UVA | [551](https://onlinejudge.org/external/5/551.pdf) | [551.cpp](./UVA/551/551.cpp) | ✅ |
  | UVA | [12356](https://onlinejudge.org/external/123/12356.pdf) | [12356.cpp](./UVA/12356/12356.cpp) | ✅ |
