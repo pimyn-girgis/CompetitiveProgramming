@@ -6,3 +6,6 @@ Book/
 .test/
 .DS_Store
 tree.sh
+*.ans
+*.in
+*.pdf
