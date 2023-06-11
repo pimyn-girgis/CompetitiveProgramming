@@ -37,7 +37,7 @@ The solutions present in this repository serve as a record of my journey in comp
 | KATTIS | [quickbrownfox](https://open.kattis.com/problems/quickbrownfox) | [quickbrownfox.cpp](./KATTIS/quickbrownfox/quickbrownfox.cpp) | ✅ |
 | KATTIS | [height](https://open.kattis.com/problems/height) | [height.cpp](./KATTIS/height/height.cpp) | ✅ |
 | KATTIS | [busnumbers](https://open.kattis.com/problems/busnumbers) | [busnumbers.cpp](./KATTIS/busnumbers/busnumbers.cpp) | ✅ |
-| KATTIS | [gcpc](https://open.kattis.com/problems/gcpc) | [gcpc.cpp](./KATTIS/gcpc/gcpc.cpp) | ✅ |
+| KATTIS | [gcpc](https://open.kattis.com/problems/gcpc) | [gcpc.cpp](./KATTIS/gcpc/gcpc.cpp) | ❌ |
 | KATTIS | [basicprogramming2](https://open.kattis.com/problems/basicprogramming2) | [basicprogramming2.cpp](./KATTIS/basicprogramming2/basicprogramming2.cpp) | ✅ |
 | KATTIS | [mali](https://open.kattis.com/problems/mali) | [mali.cpp](./KATTIS/mali/mali.cpp) | ✅ |
 | KATTIS | [mjehuric](https://open.kattis.com/problems/mjehuric) | [mjehuric.cpp](./KATTIS/mjehuric/mjehuric.cpp) | ✅ |
