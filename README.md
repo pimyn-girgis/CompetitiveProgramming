@@ -240,3 +240,4 @@ The solutions present in this repository serve as a record of my journey in comp
 | UVA | [10684](https://onlinejudge.org/external/106/10684.pdf) | [10684.cpp](./UVA/10684/10684.cpp) | ✅ |
 | UVA | [727](https://onlinejudge.org/external/7/727.pdf) | [727.cpp](./UVA/727/727.cpp) | ✅ |
 | UVA | [12965](https://onlinejudge.org/external/129/12965.pdf) | [12965.cpp](./UVA/727/12965.cpp) | ❌ |
+| UVA | [12032](https://onlinejudge.org/external/120/12032.pdf) | [12032.cpp](./UVA/727/12032.cpp) | ❌ |

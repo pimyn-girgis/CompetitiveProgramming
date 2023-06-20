@@ -16,32 +16,32 @@
 using namespace std;
 
 int pro[10005], con[10005];
-set<int> prices;
+int prices[20005];
+int *p_prices = prices + 1;
 
 int main() {
-	prices.clear(); prices.insert(0);
 	int tc; scanf("%d", &tc);
 	while (tc--) {
 		int p, c; scanf("%d%d", &p, &c);
 
 		for (int i = 0; i < p; ++i) {
 			scanf("%d", pro + i);
-			prices.insert(pro[i]);
+			p_prices[i] = pro[i];
 		}
 		for (int i = 0; i < c; ++i) {
 			scanf("%d", con + i);
-			prices.insert(con[i]);
+			p_prices[p + i] = con[i];
 		}
 
 		sort(pro, pro + p);
 		sort(con, con + c);
+		sort(p_prices, p_prices + p + c);
+		int n = unique(p_prices, p_prices + p + c) - prices;
 
 		int angry = 1e9, ans = 0;
 
-		for (int u : prices) {
-			// 1 1 1 2 2 3 3 pro
-			// 1 1 2 2 3 3 3 con
-			// u = 2
+		for (int i = 0; i < n; ++i) {
+			int u = prices[i];
 			int cur_angry = p - (upper_bound(pro, pro + p, u) - pro)
 							      + lower_bound(con, con + c, u) - con;
 
