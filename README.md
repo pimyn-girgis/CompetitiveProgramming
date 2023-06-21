@@ -2,7 +2,8 @@
 CompetitiveProgramming is a collection of my solutions to (most) problems present in the book "Competitive Programming 4."
 
 The solutions present in this repository serve as a record of my journey in competitive programming. Accordingly, the most recent solutions will be more efficient than the older ones.
-
+## How do I manage my repo (including the solutions table)?
+Check out [uva](https://github.com/pimyn-girgis/uva)
 # Solutions Table
 
 | Judge | Problem | Solution | Status
