@@ -242,3 +242,4 @@ Check out [uva](https://github.com/pimyn-girgis/uva)
 | UVA | [727](https://onlinejudge.org/external/7/727.pdf) | [727.cpp](./UVA/727/727.cpp) | ✅ |
 | UVA | [12965](https://onlinejudge.org/external/129/12965.pdf) | [12965.cpp](./UVA/727/12965.cpp) | ✅ |
 | UVA | [12032](https://onlinejudge.org/external/120/12032.pdf) | [12032.cpp](./UVA/727/12032.cpp) | ❌ |
+| UVA | [12190](https://onlinejudge.org/external/121/12190.pdf) | [12190.cpp](/Users/bemen/Documents/cpp/UVA/12190/12190.cpp) | ✅ |
